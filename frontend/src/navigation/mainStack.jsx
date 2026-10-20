@@ -5,7 +5,7 @@ import AttendanceScreen from '../screens/main/AttendanceScreen';
 import LeaveScreen from '../screens/main/LeaveScreen';
 import AnnouncementsScreen from '../screens/main/AnnouncementsScreen';
 import PerformanceScreen from '../screens/main/PerformanceScreen';
-import FieldForceScreen from '../FieldForce/FieldForceScreen';
+import FieldForceScreen from '../screens/main/FieldForceScreen';
 
 const Stack = createStackNavigator();
 

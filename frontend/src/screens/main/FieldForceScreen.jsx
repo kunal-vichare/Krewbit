@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../Constants/colors';
-import { STRINGS } from '../Constants/strings';
-import { logFieldCheckpointThunk } from '../redux/slices/appSlice';
-import { Header } from '../components/Header';
-import { Card } from '../components/Card';
-import { Button } from '../components/Button';
+import { COLORS } from '../../Constants/colors';
+import { STRINGS } from '../../Constants/strings';
+import { logFieldCheckpointThunk } from '../../redux/slices/appSlice';
+import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
+import { Button } from '../../components/Button';
 
 const SITES = [
   { id: '1', name: 'Municipal Office Complex', coords: '19.0760° N, 72.8777° E' },
