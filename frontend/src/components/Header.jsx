@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -5,7 +6,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { COLORS } from '../Constants/colors';
 import { logout } from '../redux/slices/authSlice';
 
-export const Header = ({ title, showBack = false, rightElement }) => {
+export const Header = ({
+  title,
+  showBack = false,
+  rightElement,
+  leftIcon,
+  onLeftPress,
+}) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.auth.currentUser);
@@ -20,24 +27,38 @@ export const Header = ({ title, showBack = false, rightElement }) => {
     }
   };
 
+  // Custom action takes priority over default back navigation
+  const handleLeftPress = onLeftPress || handleBack;
+
+  const icon = leftIcon || (showBack ? '←' : null);
+
   return (
     <View style={styles.header}>
       <View style={styles.leftSection}>
-        {showBack && navigation.canGoBack() && (
-          <TouchableOpacity onPress={handleBack} style={styles.backButton} activeOpacity={0.7}>
-            <Text style={styles.backButtonText}>←</Text>
+        {icon && (
+          <TouchableOpacity
+            onPress={handleLeftPress}
+            style={styles.leftButton}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.leftIconText}>{icon}</Text>
           </TouchableOpacity>
         )}
+
         <Text style={styles.title} numberOfLines={1}>
           {title}
         </Text>
       </View>
-      
+
       <View style={styles.rightSection}>
         {rightElement ? (
           rightElement
         ) : currentUser ? (
-          <TouchableOpacity onPress={handleLogout} style={styles.logoutButton} activeOpacity={0.7}>
+          <TouchableOpacity
+            onPress={handleLogout}
+            style={styles.logoutButton}
+            activeOpacity={0.7}
+          >
             <Text style={styles.logoutText}>Logout</Text>
           </TouchableOpacity>
         ) : null}
@@ -62,13 +83,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
   },
-  backButton: {
+  leftButton: {
     paddingRight: 16,
     paddingVertical: 8,
   },
-  backButtonText: {
+  leftIconText: {
     color: COLORS.primaryLight,
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
   },
   title: {
@@ -76,6 +97,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: COLORS.text,
     letterSpacing: 0.3,
+    flexShrink: 1,
   },
   rightSection: {
     flexDirection: 'row',

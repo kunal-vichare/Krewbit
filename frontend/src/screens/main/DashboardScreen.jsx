@@ -8,6 +8,7 @@ import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
 import { Button } from '../../components/Button';
+import { DrawerActions } from '@react-navigation/native';
 import { ProgressBar, ProgressRingPlaceholder } from '../../components/Chart';
 
 export const DashboardScreen = () => {
@@ -55,7 +56,11 @@ export const DashboardScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={STRINGS.appName} />
+      <Header 
+        title={STRINGS.appName}
+        leftIcon="☰"
+        onLeftPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+      />
       
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         {/* Welcome Section */}
