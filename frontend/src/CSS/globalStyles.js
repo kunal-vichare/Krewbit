@@ -1,22 +1,33 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colors } from '../Constants/colors';
+import { colors } from '../Helper/colors';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  fontSize,
+  letterSpacing,
+  lineHeight,
+  elevation,
+  shadow,
+  flexValue,
+} from '../Helper/sizes';
 
 const { width, height } = Dimensions.get('window');
 
 export const globalStyles = StyleSheet.create({
   // Main Container layouts
   safeArea: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
-    padding: 16,
+    padding: spacing.L,
   },
   scrollContainer: {
-    flexGrow: 1,
-    paddingBottom: 24,
+    flexGrow: flexValue.full,
+    paddingBottom: spacing.xLarge,
   },
   
   // Flex Utilities
@@ -40,53 +51,53 @@ export const globalStyles = StyleSheet.create({
   // Cards & Containers
   card: {
     backgroundColor: colors.cardBg,
-    borderRadius: 16,
-    padding: 18,
-    marginVertical: 8,
-    borderWidth: 1,
+    borderRadius: borderRadius.xxl,
+    padding: spacing.large,
+    marginVertical: spacing.small,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
-    elevation: 5,
+    shadowColor: colors.Black,
+    shadowOffset: shadow.offsetMedium,
+    shadowOpacity: shadow.opacityExtraLarge,
+    shadowRadius: shadow.radiusMedium,
+    elevation: elevation.high,
   },
   cardGlass: {
     backgroundColor: colors.cardBgGlass,
-    borderRadius: 16,
-    padding: 16,
-    marginVertical: 8,
-    borderWidth: 1,
+    borderRadius: borderRadius.xxl,
+    padding: spacing.L,
+    marginVertical: spacing.small,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
   },
   
   // Typography Styles
   title: {
-    fontSize: 26,
+    fontSize: fontSize.titleLarge,
     fontWeight: '800',
     color: colors.text,
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   subtitle: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     color: colors.textMuted,
-    marginTop: 4,
-    lineHeight: 20,
+    marginTop: spacing.S,
+    lineHeight: lineHeight.normal,
   },
   sectionHeader: {
-    fontSize: 18,
+    fontSize: fontSize.section,
     fontWeight: '700',
     color: colors.text,
-    marginVertical: 12,
-    letterSpacing: 0.3,
+    marginVertical: spacing.medium,
+    letterSpacing: letterSpacing.tight,
   },
   bodyText: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     color: colors.text,
-    lineHeight: 20,
+    lineHeight: lineHeight.normal,
   },
   bodyTextMuted: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.textMuted,
   },
   boldText: {
@@ -95,43 +106,43 @@ export const globalStyles = StyleSheet.create({
   
   // Form elements styling
   inputGroup: {
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   inputLabel: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '600',
     color: colors.textMuted,
-    marginBottom: 6,
+    marginBottom: spacing.Sm,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   inputField: {
     backgroundColor: 'rgba(255,255,255,0.03)',
-    borderWidth: 1,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
-    borderRadius: 10,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
+    borderRadius: borderRadius.lg,
+    paddingHorizontal: spacing.mediumLarge,
+    paddingVertical: spacing.medium,
     color: colors.text,
-    fontSize: 15,
+    fontSize: fontSize.bodyLarge,
   },
   inputFieldError: {
     borderColor: colors.danger,
   },
   errorText: {
     color: colors.danger,
-    fontSize: 12,
-    marginTop: 4,
+    fontSize: fontSize.bodySmall,
+    marginTop: spacing.S,
   },
   
   // Buttons
   btn: {
-    borderRadius: 10,
-    paddingVertical: 14,
-    paddingHorizontal: 20,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.mediumLarge,
+    paddingHorizontal: spacing.XL,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 8,
+    marginVertical: spacing.small,
   },
   btnPrimary: {
     backgroundColor: colors.primary,
@@ -141,11 +152,11 @@ export const globalStyles = StyleSheet.create({
   },
   btnOutline: {
     backgroundColor: 'transparent',
-    borderWidth: 1.5,
+    borderWidth: borderValue.outline,
     borderColor: colors.primary,
   },
   btnText: {
-    fontSize: 16,
+    fontSize: fontSize.medium,
     fontWeight: '700',
     color: colors.text,
   },
@@ -158,23 +169,23 @@ export const globalStyles = StyleSheet.create({
   
   // Badges & Indicators
   badge: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
+    paddingHorizontal: spacing.small,
+    paddingVertical: spacing.S,
+    borderRadius: borderRadius.sm,
     alignSelf: 'flex-start',
   },
   badgeAdmin: {
     backgroundColor: 'rgba(139, 92, 246, 0.2)',
     borderColor: colors.accent,
-    borderWidth: 0.5,
+    borderWidth: borderValue.hairline,
   },
   badgeEmployee: {
     backgroundColor: 'rgba(79, 70, 229, 0.2)',
     borderColor: colors.primary,
-    borderWidth: 0.5,
+    borderWidth: borderValue.hairline,
   },
   badgeText: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     fontWeight: '600',
   },
   

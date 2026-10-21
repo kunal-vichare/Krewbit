@@ -7,6 +7,13 @@ import { STRINGS } from '../../Constants/strings';
 import { registerCompany } from '../../redux/slices/authSlice';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
+import {
+  spacing,
+  fontSize,
+  lineHeight,
+  flexValue,
+  percentageCode,
+} from '../../Helper/sizes';
 
 export const CompanyRegisterScreen = () => {
   const navigation = useNavigation();
@@ -129,53 +136,53 @@ export const CompanyRegisterScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   content: {
-    padding: 24,
+    padding: spacing.xLarge,
     justifyContent: 'center',
-    flexGrow: 1,
+    flexGrow: flexValue.full,
   },
   header: {
     alignItems: 'center',
-    marginBottom: 28,
-    marginTop: 20,
+    marginBottom: spacing.xxLarge,
+    marginTop: spacing.XL,
   },
   title: {
-    fontSize: 22,
+    fontSize: fontSize.titleMedium,
     fontWeight: '800',
     color: colors.text,
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.textMuted,
     textAlign: 'center',
-    marginTop: 8,
-    paddingHorizontal: 20,
-    lineHeight: 18,
+    marginTop: spacing.small,
+    paddingHorizontal: spacing.XL,
+    lineHeight: lineHeight.medium,
   },
   form: {
-    width: '100%',
+    width: percentageCode.full,
   },
   submitBtn: {
-    marginTop: 8,
+    marginTop: spacing.small,
   },
   footer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 24,
+    marginTop: spacing.xLarge,
   },
   footerText: {
     color: colors.textMuted,
-    fontSize: 13,
-    marginRight: 6,
+    fontSize: fontSize.body,
+    marginRight: spacing.Sm,
   },
   loginLink: {
     color: colors.primaryLight,
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '700',
   },
 });

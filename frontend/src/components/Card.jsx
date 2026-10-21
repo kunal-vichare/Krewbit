@@ -1,6 +1,16 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { colors } from '../Helper/colors';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  opacityValue,
+  fontSize,
+  letterSpacing,
+  elevation,
+  shadow,
+} from '../Helper/sizes';
 
 export const Card = ({
   children,
@@ -11,7 +21,7 @@ export const Card = ({
   noPadding = false,
 }) => {
   const Container = onPress ? TouchableOpacity : View;
-  const touchProps = onPress ? { activeOpacity: 0.9, onPress } : {};
+  const touchProps = onPress ? { activeOpacity: opacityValue.touchHeavy, onPress } : {};
 
   return (
     <Container {...touchProps} style={[styles.card, style]}>
@@ -35,46 +45,46 @@ export const Card = ({
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.cardBg,
-    borderRadius: 16,
-    borderWidth: 1,
+    borderRadius: borderRadius.xxl,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
-    marginVertical: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
-    elevation: 4,
+    marginVertical: spacing.small,
+    shadowColor: colors.Black,
+    shadowOffset: shadow.offsetMedium,
+    shadowOpacity: shadow.opacityLarge,
+    shadowRadius: shadow.radiusLarge,
+    elevation: elevation.medium,
     overflow: 'hidden',
   },
   content: {
-    padding: 16,
+    padding: spacing.L,
   },
   noPadding: {
-    padding: 0,
+    padding: spacing.none,
   },
   headerContainer: {
-    paddingHorizontal: 16,
-    paddingTop: 14,
-    paddingBottom: 8,
-    borderBottomWidth: 0.5,
+    paddingHorizontal: spacing.L,
+    paddingTop: spacing.mediumLarge,
+    paddingBottom: spacing.small,
+    borderBottomWidth: borderValue.hairline,
     borderBottomColor: colors.border,
   },
   headerText: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     fontWeight: '700',
     color: colors.text,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   footerContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingHorizontal: spacing.L,
+    paddingVertical: spacing.M,
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
-    borderTopWidth: 0.5,
+    borderTopWidth: borderValue.hairline,
     borderTopColor: colors.border,
   },
   footerText: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.textMuted,
   },
 });

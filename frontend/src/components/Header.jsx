@@ -5,6 +5,16 @@ import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../Helper/colors';
 import { logout } from '../redux/slices/authSlice';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  opacityValue,
+  fontSize,
+  letterSpacing,
+  flexValue,
+  componentSizes,
+} from '../Helper/sizes';
 
 export const Header = ({
   title,
@@ -39,7 +49,7 @@ export const Header = ({
           <TouchableOpacity
             onPress={handleLeftPress}
             style={styles.leftButton}
-            activeOpacity={0.7}
+            activeOpacity={opacityValue.touchLight}
           >
             <Text style={styles.leftIconText}>{icon}</Text>
           </TouchableOpacity>
@@ -57,7 +67,7 @@ export const Header = ({
           <TouchableOpacity
             onPress={handleLogout}
             style={styles.logoutButton}
-            activeOpacity={0.7}
+            activeOpacity={opacityValue.touchLight}
           >
             <Text style={styles.logoutText}>Logout</Text>
           </TouchableOpacity>
@@ -69,51 +79,51 @@ export const Header = ({
 
 const styles = StyleSheet.create({
   header: {
-    height: 60,
+    height: componentSizes.headerHeight,
     backgroundColor: colors.background,
-    borderBottomWidth: 1,
+    borderBottomWidth: borderValue.thin,
     borderBottomColor: colors.border,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
+    paddingHorizontal: spacing.L,
   },
   leftSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    flex: 1,
+    flex: flexValue.full,
   },
   leftButton: {
-    paddingRight: 16,
-    paddingVertical: 8,
+    paddingRight: spacing.L,
+    paddingVertical: spacing.small,
   },
   leftIconText: {
     color: colors.primaryLight,
-    fontSize: 26,
+    fontSize: fontSize.titleLarge,
     fontWeight: 'bold',
   },
   title: {
-    fontSize: 20,
+    fontSize: fontSize.titleSmall,
     fontWeight: '800',
     color: colors.text,
-    letterSpacing: 0.3,
-    flexShrink: 1,
+    letterSpacing: letterSpacing.tight,
+    flexShrink: flexValue.full,
   },
   rightSection: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   logoutButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    borderRadius: 8,
+    paddingVertical: spacing.Sm,
+    paddingHorizontal: spacing.medium,
+    borderRadius: borderRadius.md,
     backgroundColor: 'rgba(239, 68, 68, 0.12)',
-    borderWidth: 0.5,
+    borderWidth: borderValue.hairline,
     borderColor: 'rgba(239, 68, 68, 0.4)',
   },
   logoutText: {
     color: colors.danger,
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     fontWeight: '700',
   },
 });

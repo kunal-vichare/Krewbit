@@ -1,9 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors } from '../Helper/colors';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  fontSize,
+  flexValue,
+  percentageCode,
+  componentSizes,
+} from '../Helper/sizes';
 
 // Bar Chart Component (Flexbox-based)
-export const BarChart = ({ data = [], maxValue = 10, height = 180 }) => {
+export const BarChart = ({ data = [], maxValue = spacing.M, height = componentSizes.defaultChartHeight }) => {
   return (
     <View style={[styles.chartContainer, { height }]}>
       <View style={styles.chartYAxis}>
@@ -36,7 +45,7 @@ export const BarChart = ({ data = [], maxValue = 10, height = 180 }) => {
 };
 
 // Progress Line Bar Component (horizontal gauge)
-export const ProgressBar = ({ percentage = 0, color = colors.primary, height = 8 }) => {
+export const ProgressBar = ({ percentage = spacing.none, color = colors.primary, height = componentSizes.defaultProgressHeight }) => {
   const clampedValue = Math.min(Math.max(percentage, 0), 100);
   return (
     <View style={styles.progressBarWrapper}>
@@ -74,85 +83,85 @@ const styles = StyleSheet.create({
   chartContainer: {
     flexDirection: 'row',
     alignItems: 'stretch',
-    marginVertical: 12,
+    marginVertical: spacing.medium,
   },
   chartYAxis: {
     justifyContent: 'space-between',
-    paddingRight: 8,
-    paddingVertical: 12,
-    borderRightWidth: 1,
+    paddingRight: spacing.small,
+    paddingVertical: spacing.medium,
+    borderRightWidth: borderValue.thin,
     borderRightColor: colors.border,
   },
   yAxisText: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
     textAlign: 'right',
   },
   chartPlotArea: {
-    flex: 1,
+    flex: flexValue.full,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'flex-end',
-    paddingLeft: 8,
+    paddingLeft: spacing.small,
   },
   barWrapper: {
     alignItems: 'center',
-    flex: 1,
-    height: '100%',
+    flex: flexValue.full,
+    height: percentageCode.full,
     justifyContent: 'flex-end',
   },
   barTrack: {
-    width: 14,
+    width: componentSizes.barTrackWidth,
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    borderRadius: 8,
-    flex: 1,
+    borderRadius: borderRadius.md,
+    flex: flexValue.full,
     justifyContent: 'flex-end',
     overflow: 'hidden',
-    marginBottom: 6,
+    marginBottom: spacing.Sm,
   },
   barFill: {
     backgroundColor: colors.primaryLight,
-    borderRadius: 8,
-    width: '100%',
+    borderRadius: borderRadius.md,
+    width: percentageCode.full,
   },
   barLabel: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
-    marginTop: 4,
+    marginTop: spacing.S,
   },
   barValue: {
-    fontSize: 9,
+    fontSize: fontSize.tiny,
     color: colors.text,
     fontWeight: 'bold',
-    marginTop: 2,
+    marginTop: spacing.Xs,
   },
   
   // Progress Bar styles
   progressBarWrapper: {
-    width: '100%',
-    marginVertical: 6,
+    width: percentageCode.full,
+    marginVertical: spacing.Sm,
   },
   progressBarTrack: {
-    width: '100%',
+    width: percentageCode.full,
     backgroundColor: 'rgba(255, 255, 255, 0.08)',
-    borderRadius: 4,
+    borderRadius: borderRadius.xs,
     overflow: 'hidden',
   },
   progressBarFill: {
-    borderRadius: 4,
+    borderRadius: borderRadius.xs,
   },
 
   // Concentric circle ring styles
   ringContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 10,
+    marginVertical: spacing.M,
   },
   ringOuter: {
-    width: 110,
-    height: 110,
-    borderRadius: 55,
-    borderWidth: 8,
+    width: componentSizes.ringOuterSize,
+    height: componentSizes.ringOuterSize,
+    borderRadius: borderRadius.roundMedium,
+    borderWidth: borderValue.heavy,
     borderColor: colors.primary,
     borderStyle: 'solid',
     alignItems: 'center',
@@ -160,21 +169,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(79, 70, 229, 0.05)',
   },
   ringInner: {
-    width: 84,
-    height: 84,
-    borderRadius: 42,
+    width: componentSizes.ringInnerSize,
+    height: componentSizes.ringInnerSize,
+    borderRadius: borderRadius.roundSmall,
     alignItems: 'center',
     justifyContent: 'center',
   },
   ringScoreText: {
-    fontSize: 22,
+    fontSize: fontSize.titleMedium,
     fontWeight: '800',
     color: colors.text,
   },
   ringLabelText: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
-    marginTop: 2,
+    marginTop: spacing.Xs,
     fontWeight: '600',
     textTransform: 'uppercase',
   },

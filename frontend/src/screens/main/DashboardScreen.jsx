@@ -10,6 +10,18 @@ import { Card } from '../../Components/Card';
 import { Button } from '../../Components/Button';
 import { DrawerActions } from '@react-navigation/native';
 import { ProgressBar, ProgressRingPlaceholder } from '../../Components/Chart';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  opacityValue,
+  fontSize,
+  letterSpacing,
+  lineHeight,
+  flexValue,
+  percentageCode,
+  componentSizes,
+} from '../../Helper/sizes';
 
 export const DashboardScreen = () => {
   const navigation = useNavigation();
@@ -89,7 +101,7 @@ export const DashboardScreen = () => {
           <TouchableOpacity 
             style={styles.gridItem} 
             onPress={() => navigation.navigate('Attendance')}
-            activeOpacity={0.8}
+            activeOpacity={opacityValue.medium}
           >
             <Text style={styles.gridIcon}>📅</Text>
             <Text style={styles.gridText}>Attendance</Text>
@@ -98,7 +110,7 @@ export const DashboardScreen = () => {
           <TouchableOpacity 
             style={styles.gridItem} 
             onPress={() => navigation.navigate('Leave')}
-            activeOpacity={0.8}
+            activeOpacity={opacityValue.medium}
           >
             <Text style={styles.gridIcon}>🌴</Text>
             <Text style={styles.gridText}>Leave</Text>
@@ -107,7 +119,7 @@ export const DashboardScreen = () => {
           <TouchableOpacity 
             style={styles.gridItem} 
             onPress={() => navigation.navigate('Announcements')}
-            activeOpacity={0.8}
+            activeOpacity={opacityValue.medium}
           >
             <Text style={styles.gridIcon}>📢</Text>
             <Text style={styles.gridText}>Noticeboard</Text>
@@ -116,7 +128,7 @@ export const DashboardScreen = () => {
           <TouchableOpacity 
             style={styles.gridItem} 
             onPress={() => navigation.navigate('Performance')}
-            activeOpacity={0.8}
+            activeOpacity={opacityValue.medium}
           >
             <Text style={styles.gridIcon}>📈</Text>
             <Text style={styles.gridText}>Performance</Text>
@@ -125,7 +137,7 @@ export const DashboardScreen = () => {
           <TouchableOpacity 
             style={[styles.gridItem, styles.fullWidthGridItem]} 
             onPress={() => navigation.navigate('FieldForce')}
-            activeOpacity={0.8}
+            activeOpacity={opacityValue.medium}
           >
             <Text style={styles.gridIcon}>📍</Text>
             <Text style={styles.gridText}>Field Force GPS check-in</Text>
@@ -225,119 +237,119 @@ export const DashboardScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   scrollContent: {
-    padding: 16,
-    paddingBottom: 30,
+    padding: spacing.L,
+    paddingBottom: spacing.XXL,
   },
   welcomeBanner: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   welcomeText: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     color: colors.textMuted,
     fontWeight: '500',
   },
   userName: {
-    fontSize: 24,
+    fontSize: fontSize.title,
     fontWeight: '800',
     color: colors.text,
   },
   userRole: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.primaryLight,
     fontWeight: '600',
-    marginTop: 2,
+    marginTop: spacing.Xs,
   },
   badge: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 8,
+    paddingHorizontal: spacing.M,
+    paddingVertical: spacing.five,
+    borderRadius: borderRadius.md,
   },
   badgeAdmin: {
     backgroundColor: 'rgba(139, 92, 246, 0.15)',
-    borderWidth: 0.8,
+    borderWidth: borderValue.subtle,
     borderColor: colors.accent,
   },
   badgeEmployee: {
     backgroundColor: 'rgba(79, 70, 229, 0.15)',
-    borderWidth: 0.8,
+    borderWidth: borderValue.subtle,
     borderColor: colors.primary,
   },
   badgeText: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     fontWeight: '700',
     color: colors.text,
   },
   companyInfoCard: {
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
-    borderRadius: 12,
-    borderWidth: 0.8,
+    borderRadius: borderRadius.xl,
+    borderWidth: borderValue.subtle,
     borderColor: colors.border,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
+    paddingHorizontal: spacing.mediumLarge,
+    paddingVertical: spacing.M,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: spacing.XL,
   },
   companyLabel: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.textMuted,
-    marginRight: 6,
+    marginRight: spacing.Sm,
     fontWeight: '600',
   },
   companyValue: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.text,
     fontWeight: '700',
   },
   sectionTitle: {
-    fontSize: 15,
+    fontSize: fontSize.bodyLarge,
     fontWeight: '700',
     color: colors.text,
-    marginBottom: 10,
+    marginBottom: spacing.M,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   gridItem: {
-    width: '48%',
+    width: percentageCode.nearHalf,
     backgroundColor: colors.cardBg,
-    borderWidth: 1,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
-    borderRadius: 12,
-    padding: 16,
+    borderRadius: borderRadius.xl,
+    padding: spacing.L,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 12,
+    marginBottom: spacing.medium,
   },
   fullWidthGridItem: {
-    width: '100%',
+    width: percentageCode.full,
     flexDirection: 'row',
     justifyContent: 'center',
   },
   gridIcon: {
-    fontSize: 26,
-    marginBottom: 6,
+    fontSize: fontSize.titleLarge,
+    marginBottom: spacing.Sm,
   },
   gridText: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     fontWeight: '700',
     color: colors.text,
-    marginLeft: 6,
+    marginLeft: spacing.Sm,
   },
   cardSpacing: {
-    marginBottom: 14,
+    marginBottom: spacing.mediumLarge,
   },
   attendanceRow: {
     flexDirection: 'row',
@@ -345,69 +357,69 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   attendanceStateText: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     fontWeight: '800',
     color: colors.text,
   },
   attendanceTimeSubText: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.textMuted,
-    marginTop: 4,
+    marginTop: spacing.S,
   },
   clockBtn: {
-    paddingVertical: 10,
-    paddingHorizontal: 18,
-    marginVertical: 0,
+    paddingVertical: spacing.M,
+    paddingHorizontal: spacing.large,
+    marginVertical: spacing.none,
   },
   statsRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 6,
+    marginBottom: spacing.Sm,
   },
   halfCard: {
-    width: '48%',
-    height: 115,
-    marginVertical: 0,
+    width: percentageCode.nearHalf,
+    height: componentSizes.halfCardHeight,
+    marginVertical: spacing.none,
   },
   bigStatNum: {
-    fontSize: 20,
+    fontSize: fontSize.titleSmall,
     fontWeight: '800',
     color: colors.text,
-    marginTop: 4,
+    marginTop: spacing.S,
   },
   statSubText: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     color: colors.textMuted,
-    marginTop: 4,
+    marginTop: spacing.S,
   },
   holidayName: {
-    fontSize: 16,
+    fontSize: fontSize.medium,
     fontWeight: '800',
     color: colors.warning,
-    marginTop: 6,
+    marginTop: spacing.Sm,
   },
   holidayDate: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     color: colors.textMuted,
-    marginTop: 2,
+    marginTop: spacing.Xs,
   },
   announcementTitle: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     fontWeight: '700',
     color: colors.text,
   },
   announcementExcerpt: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.textMuted,
-    marginTop: 4,
-    lineHeight: 16,
+    marginTop: spacing.S,
+    lineHeight: lineHeight.small,
   },
   viewAllBtn: {
-    marginTop: 10,
+    marginTop: spacing.M,
     alignSelf: 'flex-start',
   },
   viewAllText: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.primaryLight,
     fontWeight: '700',
   },
@@ -416,40 +428,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   analyticsTextDetails: {
-    flex: 1,
-    marginLeft: 16,
+    flex: flexValue.full,
+    marginLeft: spacing.L,
   },
   analyticsTitleText: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '700',
     color: colors.text,
   },
   analyticsTitleTextWithMargin: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '700',
     color: colors.text,
-    marginTop: 14,
+    marginTop: spacing.mediumLarge,
   },
   analyticsBodyText: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     color: colors.textMuted,
-    marginTop: 4,
-    lineHeight: 15,
-    marginBottom: 8,
+    marginTop: spacing.S,
+    lineHeight: lineHeight.tight,
+    marginBottom: spacing.small,
   },
   bold: {
     color: colors.text,
     fontWeight: '700',
   },
   barLabel: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
     fontWeight: '600',
   },
   progressLabelText: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
-    marginTop: 2,
+    marginTop: spacing.Xs,
     textAlign: 'right',
   },
 });

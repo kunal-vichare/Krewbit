@@ -1,6 +1,16 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { colors } from '../Helper/colors';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  opacityValue,
+  fontSize,
+  letterSpacing,
+  elevation,
+  shadow,
+} from '../Helper/sizes';
 
 export const Button = ({
   onPress,
@@ -38,7 +48,7 @@ export const Button = ({
     <TouchableOpacity
       onPress={onPress}
       disabled={disabled || loading}
-      activeOpacity={0.85}
+      activeOpacity={opacityValue.touch}
       style={[
         styles.base,
         getButtonStyle(),
@@ -57,18 +67,18 @@ export const Button = ({
 
 const styles = StyleSheet.create({
   base: {
-    borderRadius: 12,
-    paddingVertical: 14,
-    paddingHorizontal: 20,
+    borderRadius: borderRadius.xl,
+    paddingVertical: spacing.mediumLarge,
+    paddingHorizontal: spacing.XL,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginVertical: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    elevation: 3,
+    marginVertical: spacing.small,
+    shadowColor: colors.Black,
+    shadowOffset: shadow.offsetSmall,
+    shadowOpacity: shadow.opacitySmall,
+    shadowRadius: shadow.radiusSmall,
+    elevation: elevation.low,
   },
   primary: {
     backgroundColor: colors.primary,
@@ -78,23 +88,23 @@ const styles = StyleSheet.create({
   },
   outline: {
     backgroundColor: 'transparent',
-    borderWidth: 1.5,
+    borderWidth: borderValue.outline,
     borderColor: colors.primary,
-    elevation: 0,
-    shadowOpacity: 0,
+    elevation: elevation.none,
+    shadowOpacity: shadow.opacityNone,
   },
   danger: {
     backgroundColor: colors.danger,
   },
   disabled: {
-    opacity: 0.5,
-    elevation: 0,
-    shadowOpacity: 0,
+    opacity: opacityValue.low,
+    elevation: elevation.none,
+    shadowOpacity: shadow.opacityNone,
   },
   textBase: {
-    fontSize: 15,
+    fontSize: fontSize.bodyLarge,
     fontWeight: '700',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   textDefault: {
     color: colors.text,

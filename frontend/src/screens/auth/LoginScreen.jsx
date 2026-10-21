@@ -7,6 +7,17 @@ import { STRINGS } from '../../Constants/strings';
 import { login } from '../../redux/slices/authSlice';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  opacityValue,
+  fontSize,
+  letterSpacing,
+  lineHeight,
+  flexValue,
+  percentageCode,
+} from '../../Helper/sizes';
 
 export const LoginScreen = () => {
   const navigation = useNavigation();
@@ -86,7 +97,7 @@ export const LoginScreen = () => {
                 setRole(key);
                 setErrors({});
               }}
-              activeOpacity={0.8}
+              activeOpacity={opacityValue.medium}
             >
               <Text
                 style={[
@@ -140,70 +151,70 @@ export const LoginScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   content: {
-    padding: 24,
+    padding: spacing.xLarge,
     justifyContent: 'center',
-    flexGrow: 1,
+    flexGrow: flexValue.full,
   },
   header: {
     alignItems: 'center',
-    marginBottom: 32,
-    marginTop: 20,
+    marginBottom: spacing.xxxLarge,
+    marginTop: spacing.XL,
   },
   appName: {
-    fontSize: 32,
+    fontSize: fontSize.huge,
     fontWeight: '900',
     color: colors.primaryLight,
-    letterSpacing: 1,
-    marginBottom: 8,
+    letterSpacing: letterSpacing.wide,
+    marginBottom: spacing.small,
   },
   title: {
-    fontSize: 22,
+    fontSize: fontSize.titleMedium,
     fontWeight: '800',
     color: colors.text,
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.textMuted,
     textAlign: 'center',
-    marginTop: 6,
-    paddingHorizontal: 20,
-    lineHeight: 18,
+    marginTop: spacing.Sm,
+    paddingHorizontal: spacing.XL,
+    lineHeight: lineHeight.medium,
   },
   roleContainer: {
-    marginBottom: 24,
+    marginBottom: spacing.xLarge,
   },
   roleLabel: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     fontWeight: '700',
     color: colors.textMuted,
-    marginBottom: 8,
+    marginBottom: spacing.small,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   roleTabs: {
     flexDirection: 'row',
     backgroundColor: 'rgba(255,255,255,0.03)',
-    borderRadius: 12,
-    padding: 4,
-    borderWidth: 1,
+    borderRadius: borderRadius.xl,
+    padding: spacing.S,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
   },
   roleTab: {
-    flex: 1,
-    paddingVertical: 12,
+    flex: flexValue.full,
+    paddingVertical: spacing.medium,
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: borderRadius.md,
   },
   activeTab: {
     backgroundColor: colors.primary,
   },
   roleTabText: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '600',
     color: colors.textMuted,
   },
@@ -212,25 +223,25 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   form: {
-    width: '100%',
+    width: percentageCode.full,
   },
   loginBtn: {
-    marginTop: 8,
+    marginTop: spacing.small,
   },
   footer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 24,
+    marginTop: spacing.xLarge,
   },
   footerText: {
     color: colors.textMuted,
-    fontSize: 13,
-    marginRight: 6,
+    fontSize: fontSize.body,
+    marginRight: spacing.Sm,
   },
   registerLink: {
     color: colors.primaryLight,
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '700',
   },
 });

@@ -8,6 +8,18 @@ import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
 import { Button } from '../../Components/Button';
 import { BarChart } from '../../Components/Chart';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  fontSize,
+  letterSpacing,
+  elevation,
+  shadow,
+  flexValue,
+  percentageCode,
+  componentSizes,
+} from '../../Helper/sizes';
 
 export const AttendanceScreen = () => {
   const dispatch = useDispatch();
@@ -103,7 +115,7 @@ export const AttendanceScreen = () => {
         {/* Analytics chart (Employee only) */}
         {!isAdmin && (
           <Card header={STRINGS.workingHoursTrend} style={styles.chartCard}>
-            <BarChart data={chartData} maxValue={12} />
+            <BarChart data={chartData} maxValue={spacing.medium} />
             <Text style={styles.chartDescription}>
               Displaying hours logged during standard shifts this week.
             </Text>
@@ -134,142 +146,142 @@ export const AttendanceScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   scrollContent: {
-    padding: 16,
-    paddingBottom: 30,
+    padding: spacing.L,
+    paddingBottom: spacing.XXL,
   },
   consoleCard: {
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   consoleContent: {
     alignItems: 'center',
-    paddingVertical: 8,
+    paddingVertical: spacing.small,
   },
   clockCircle: {
-    width: 160,
-    height: 160,
-    borderRadius: 80,
-    borderWidth: 3,
+    width: componentSizes.clockCircleSize,
+    height: componentSizes.clockCircleSize,
+    borderRadius: borderRadius.circle,
+    borderWidth: borderValue.thick,
     borderColor: colors.primaryLight,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(79, 70, 229, 0.03)',
-    marginBottom: 20,
+    marginBottom: spacing.XL,
     shadowColor: colors.primary,
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.2,
-    shadowRadius: 10,
-    elevation: 8,
+    shadowOffset: shadow.offsetLarge,
+    shadowOpacity: shadow.opacityMedium,
+    shadowRadius: shadow.radiusExtraLarge,
+    elevation: elevation.highest,
   },
   clockLabel: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
     fontWeight: '700',
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   clockTimer: {
-    fontSize: 20,
+    fontSize: fontSize.titleSmall,
     fontWeight: '800',
     color: colors.text,
-    marginVertical: 4,
+    marginVertical: spacing.S,
   },
   clockSubLabel: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.primaryLight,
     fontWeight: '600',
   },
   consoleBtn: {
-    width: '80%',
-    marginVertical: 0,
+    width: percentageCode.huge,
+    marginVertical: spacing.none,
   },
   chartCard: {
-    marginBottom: 20,
+    marginBottom: spacing.XL,
   },
   chartDescription: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     color: colors.textMuted,
     textAlign: 'center',
-    marginTop: 8,
+    marginTop: spacing.small,
   },
   historyTitle: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     fontWeight: '700',
     color: colors.text,
-    marginBottom: 10,
+    marginBottom: spacing.M,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
-    marginTop: 10,
+    letterSpacing: letterSpacing.normal,
+    marginTop: spacing.M,
   },
   listCard: {
-    marginBottom: 10,
+    marginBottom: spacing.M,
   },
   emptyList: {
-    padding: 24,
+    padding: spacing.xLarge,
     alignItems: 'center',
   },
   emptyText: {
     color: colors.textMuted,
-    fontSize: 13,
+    fontSize: fontSize.body,
   },
   logItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 16,
+    padding: spacing.L,
   },
   logLeft: {
-    flex: 1,
+    flex: flexValue.full,
   },
   logDate: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     fontWeight: '700',
     color: colors.text,
   },
   logUser: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
-    marginTop: 2,
+    marginTop: spacing.Xs,
   },
   logTime: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.textMuted,
-    marginTop: 4,
+    marginTop: spacing.S,
   },
   logRight: {
     alignItems: 'flex-end',
   },
   logDuration: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     fontWeight: '700',
     color: colors.text,
-    marginBottom: 4,
+    marginBottom: spacing.S,
   },
   statusIndicator: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 6,
+    paddingHorizontal: spacing.small,
+    paddingVertical: spacing.three,
+    borderRadius: borderRadius.sm,
   },
   presentBadge: {
     backgroundColor: 'rgba(16, 185, 129, 0.15)',
-    borderWidth: 0.5,
+    borderWidth: borderValue.hairline,
     borderColor: colors.secondary,
   },
   leaveBadge: {
     backgroundColor: 'rgba(239, 68, 68, 0.15)',
-    borderWidth: 0.5,
+    borderWidth: borderValue.hairline,
     borderColor: colors.danger,
   },
   statusText: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     fontWeight: '700',
     color: colors.text,
   },
   separator: {
-    height: 1,
+    height: componentSizes.separatorRegular,
     backgroundColor: colors.border,
   },
 });

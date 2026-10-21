@@ -8,6 +8,14 @@ import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
+import {
+  spacing,
+  fontSize,
+  letterSpacing,
+  lineHeight,
+  flexValue,
+  componentSizes,
+} from '../../Helper/sizes';
 
 export const AnnouncementsScreen = () => {
   const dispatch = useDispatch();
@@ -122,77 +130,77 @@ export const AnnouncementsScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   scrollContent: {
-    padding: 16,
-    paddingBottom: 30,
+    padding: spacing.L,
+    paddingBottom: spacing.XXL,
   },
   formCard: {
-    marginBottom: 20,
+    marginBottom: spacing.XL,
   },
   textArea: {
-    height: 80,
+    height: componentSizes.textAreaHeight,
     textAlignVertical: 'top',
   },
   broadcastBtn: {
-    marginTop: 8,
-    marginVertical: 0,
+    marginTop: spacing.small,
+    marginVertical: spacing.none,
   },
   feedHeading: {
-    fontSize: 14,
+    fontSize: fontSize.bodyMedium,
     fontWeight: '700',
     color: colors.text,
-    marginBottom: 10,
+    marginBottom: spacing.M,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   announceCard: {
-    marginBottom: 12,
-    marginVertical: 0,
+    marginBottom: spacing.medium,
+    marginVertical: spacing.none,
   },
   announceHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 8,
+    marginBottom: spacing.small,
   },
   announceTitle: {
-    fontSize: 15,
+    fontSize: fontSize.bodyLarge,
     fontWeight: '800',
     color: colors.text,
-    flex: 1,
-    paddingRight: 8,
+    flex: flexValue.full,
+    paddingRight: spacing.small,
   },
   announceDate: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
     fontWeight: '600',
   },
   announceBody: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.textMuted,
-    lineHeight: 18,
-    marginBottom: 12,
+    lineHeight: lineHeight.medium,
+    marginBottom: spacing.medium,
   },
   separator: {
-    height: 0.5,
+    height: componentSizes.separatorHairline,
     backgroundColor: colors.border,
-    marginBottom: 8,
+    marginBottom: spacing.small,
   },
   announceAuthor: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     color: colors.primaryLight,
     fontWeight: '700',
   },
   emptyCard: {
-    padding: 24,
+    padding: spacing.xLarge,
     alignItems: 'center',
   },
   emptyText: {
     color: colors.textMuted,
-    fontSize: 13,
+    fontSize: fontSize.body,
   },
 });
 

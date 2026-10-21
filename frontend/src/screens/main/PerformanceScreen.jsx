@@ -9,6 +9,15 @@ import { Card } from '../../Components/Card';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
 import { ProgressBar } from '../../Components/Chart';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  fontSize,
+  lineHeight,
+  flexValue,
+  componentSizes,
+} from '../../Helper/sizes';
 
 export const PerformanceScreen = () => {
   const currentUser = useSelector((state) => state.auth.currentUser);
@@ -158,35 +167,35 @@ export const PerformanceScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: colors.background,
   },
   scrollContent: {
-    padding: 16,
-    paddingBottom: 30,
+    padding: spacing.L,
+    paddingBottom: spacing.XXL,
   },
   selectorCard: {
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   selectorRow: {
     flexDirection: 'row',
   },
   selectorTab: {
-    flex: 1,
+    flex: flexValue.full,
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
-    borderWidth: 1,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
-    borderRadius: 8,
-    paddingVertical: 10,
+    borderRadius: borderRadius.md,
+    paddingVertical: spacing.M,
     alignItems: 'center',
-    marginHorizontal: 4,
+    marginHorizontal: spacing.S,
   },
   activeSelectorTab: {
     backgroundColor: colors.primary,
     borderColor: colors.primary,
   },
   selectorTabText: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     fontWeight: '700',
     color: colors.textMuted,
   },
@@ -194,47 +203,47 @@ const styles = StyleSheet.create({
     color: colors.text,
   },
   selectorEmpId: {
-    fontSize: 9,
+    fontSize: fontSize.tiny,
     color: colors.textDim,
-    marginTop: 2,
+    marginTop: spacing.Xs,
   },
   scoreRow: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 12,
-    borderBottomWidth: 1,
+    paddingVertical: spacing.medium,
+    borderBottomWidth: borderValue.thin,
     borderBottomColor: colors.border,
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   scoreBlock: {
     alignItems: 'center',
   },
   scoreNum: {
-    fontSize: 32,
+    fontSize: fontSize.huge,
     fontWeight: '900',
     color: colors.text,
   },
   scoreLabel: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     color: colors.textMuted,
-    marginTop: 4,
+    marginTop: spacing.S,
     fontWeight: '600',
   },
   metricItem: {
-    marginBottom: 16,
+    marginBottom: spacing.L,
   },
   metricHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 6,
+    marginBottom: spacing.Sm,
   },
   metricLabel: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     color: colors.textMuted,
     fontWeight: '600',
   },
   metricVal: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     fontWeight: '700',
     color: colors.text,
   },
@@ -242,62 +251,62 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 10,
-    paddingTop: 14,
-    borderTopWidth: 0.5,
+    marginTop: spacing.M,
+    paddingTop: spacing.mediumLarge,
+    borderTopWidth: borderValue.hairline,
     borderTopColor: colors.border,
   },
   statusTitle: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.textMuted,
     fontWeight: '600',
   },
   statusTag: {
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 8,
+    paddingHorizontal: spacing.M,
+    paddingVertical: spacing.S,
+    borderRadius: borderRadius.md,
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
-    borderWidth: 0.8,
+    borderWidth: borderValue.subtle,
   },
   statusTagText: {
-    fontSize: 11,
+    fontSize: fontSize.small,
     fontWeight: '700',
   },
   feedbackFormCard: {
-    marginTop: 16,
+    marginTop: spacing.L,
   },
   feedbackInput: {
-    height: 60,
+    height: componentSizes.feedbackInputHeight,
     textAlignVertical: 'top',
   },
   submitBtn: {
-    marginTop: 8,
-    marginVertical: 0,
+    marginTop: spacing.small,
+    marginVertical: spacing.none,
   },
   feedbackCard: {
-    marginTop: 16,
+    marginTop: spacing.L,
   },
   feedbackText: {
-    fontSize: 13,
+    fontSize: fontSize.body,
     color: colors.text,
-    lineHeight: 18,
+    lineHeight: lineHeight.medium,
     fontStyle: 'italic',
   },
   feedbackFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 14,
-    paddingTop: 10,
-    borderTopWidth: 0.5,
+    marginTop: spacing.mediumLarge,
+    paddingTop: spacing.M,
+    borderTopWidth: borderValue.hairline,
     borderTopColor: colors.border,
   },
   reviewerText: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textMuted,
     fontWeight: '700',
   },
   reviewerDate: {
-    fontSize: 10,
+    fontSize: fontSize.extraSmall,
     color: colors.textDim,
   },
 });

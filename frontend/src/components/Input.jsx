@@ -1,6 +1,14 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { colors } from '../Helper/colors';
+import {
+  spacing,
+  borderRadius,
+  borderValue,
+  fontSize,
+  letterSpacing,
+  percentageCode,
+} from '../Helper/sizes';
 
 export const Input = ({
   label,
@@ -38,34 +46,34 @@ export const Input = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 16,
-    width: '100%',
+    marginBottom: spacing.L,
+    width: percentageCode.full,
   },
   label: {
-    fontSize: 12,
+    fontSize: fontSize.bodySmall,
     fontWeight: '700',
     color: colors.textMuted,
-    marginBottom: 6,
+    marginBottom: spacing.Sm,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: letterSpacing.normal,
   },
   input: {
     backgroundColor: 'rgba(255, 255, 255, 0.03)',
-    borderWidth: 1,
+    borderWidth: borderValue.thin,
     borderColor: colors.border,
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    borderRadius: borderRadius.xl,
+    paddingHorizontal: spacing.L,
+    paddingVertical: spacing.medium,
     color: colors.text,
-    fontSize: 15,
+    fontSize: fontSize.bodyLarge,
   },
   inputError: {
     borderColor: colors.danger,
   },
   errorText: {
     color: colors.danger,
-    fontSize: 12,
-    marginTop: 4,
+    fontSize: fontSize.bodySmall,
+    marginTop: spacing.S,
     fontWeight: '500',
   },
 });
