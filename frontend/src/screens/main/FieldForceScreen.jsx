@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { logFieldCheckpointThunk } from '../../redux/slices/appSlice';
-import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
-import { Button } from '../../components/Button';
+import { Header } from '../../Components/Header';
+import { Card } from '../../Components/Card';
+import { Button } from '../../Components/Button';
 
 const SITES = [
   { id: '1', name: 'Municipal Office Complex', coords: '19.0760° N, 72.8777° E' },
@@ -125,7 +125,7 @@ export const FieldForceScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   scrollContent: {
     padding: 16,
@@ -142,25 +142,25 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 8,
     borderWidth: 0.5,
-    borderColor: COLORS.secondary,
+    borderColor: colors.secondary,
     marginBottom: 16,
   },
   dot: {
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: COLORS.secondary,
+    backgroundColor: colors.secondary,
     marginRight: 8,
   },
   statusText: {
-    color: COLORS.secondary,
+    color: colors.secondary,
     fontSize: 12,
     fontWeight: '700',
   },
   label: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginBottom: 8,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -171,31 +171,31 @@ const styles = StyleSheet.create({
   siteTab: {
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     borderRadius: 10,
     padding: 12,
     marginBottom: 10,
   },
   activeSiteTab: {
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.primary,
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
   siteText: {
     fontSize: 13,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   activeSiteText: {
-    color: COLORS.text,
+    color: colors.text,
   },
   siteCoordsText: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   divider: {
     height: 0.8,
-    backgroundColor: COLORS.border,
+    backgroundColor: colors.border,
     marginVertical: 14,
   },
   summaryRow: {
@@ -205,12 +205,12 @@ const styles = StyleSheet.create({
   },
   summaryLabel: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '600',
   },
   summaryValue: {
     fontSize: 12,
-    color: COLORS.text,
+    color: colors.text,
     fontWeight: '700',
   },
   submitBtn: {
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
   historyHeading: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontSize: 13,
   },
   logItem: {
@@ -248,26 +248,26 @@ const styles = StyleSheet.create({
   logSite: {
     fontSize: 13,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   logUser: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 2,
   },
   logTime: {
     fontSize: 11,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   logCoords: {
     fontSize: 11,
     fontWeight: '700',
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
   },
   separator: {
     height: 1,
-    backgroundColor: COLORS.border,
+    backgroundColor: colors.border,
   },
 });
 

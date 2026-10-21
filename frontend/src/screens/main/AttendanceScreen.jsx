@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices/appSlice';
-import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
-import { Button } from '../../components/Button';
-import { BarChart } from '../../components/Chart';
+import { Header } from '../../Components/Header';
+import { Card } from '../../Components/Card';
+import { Button } from '../../Components/Button';
+import { BarChart } from '../../Components/Chart';
 
 export const AttendanceScreen = () => {
   const dispatch = useDispatch();
@@ -135,7 +135,7 @@ export const AttendanceScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   scrollContent: {
     padding: 16,
@@ -153,12 +153,12 @@ const styles = StyleSheet.create({
     height: 160,
     borderRadius: 80,
     borderWidth: 3,
-    borderColor: COLORS.primaryLight,
+    borderColor: colors.primaryLight,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(79, 70, 229, 0.03)',
     marginBottom: 20,
-    shadowColor: COLORS.primary,
+    shadowColor: colors.primary,
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.2,
     shadowRadius: 10,
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   },
   clockLabel: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '700',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -174,12 +174,12 @@ const styles = StyleSheet.create({
   clockTimer: {
     fontSize: 20,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     marginVertical: 4,
   },
   clockSubLabel: {
     fontSize: 10,
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontWeight: '600',
   },
   consoleBtn: {
@@ -191,14 +191,14 @@ const styles = StyleSheet.create({
   },
   chartDescription: {
     fontSize: 11,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     textAlign: 'center',
     marginTop: 8,
   },
   historyTitle: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontSize: 13,
   },
   logItem: {
@@ -227,16 +227,16 @@ const styles = StyleSheet.create({
   logDate: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   logUser: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 2,
   },
   logTime: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   logRight: {
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
   logDuration: {
     fontSize: 13,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginBottom: 4,
   },
   statusIndicator: {
@@ -256,21 +256,21 @@ const styles = StyleSheet.create({
   presentBadge: {
     backgroundColor: 'rgba(16, 185, 129, 0.15)',
     borderWidth: 0.5,
-    borderColor: COLORS.secondary,
+    borderColor: colors.secondary,
   },
   leaveBadge: {
     backgroundColor: 'rgba(239, 68, 68, 0.15)',
     borderWidth: 0.5,
-    borderColor: COLORS.danger,
+    borderColor: colors.danger,
   },
   statusText: {
     fontSize: 10,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   separator: {
     height: 1,
-    backgroundColor: COLORS.border,
+    backgroundColor: colors.border,
   },
 });
 

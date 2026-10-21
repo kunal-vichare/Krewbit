@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { selectEmployeePerformance } from '../../redux/slices/appSlice';
-import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
-import { ProgressBar } from '../../components/Chart';
+import { Header } from '../../Components/Header';
+import { Card } from '../../Components/Card';
+import { Input } from '../../Components/Input';
+import { Button } from '../../Components/Button';
+import { ProgressBar } from '../../Components/Chart';
 
 export const PerformanceScreen = () => {
   const currentUser = useSelector((state) => state.auth.currentUser);
@@ -42,9 +42,9 @@ export const PerformanceScreen = () => {
   };
 
   const getStatusColor = (score) => {
-    if (score >= 90) return COLORS.secondary;
-    if (score >= 80) return COLORS.primaryLight;
-    return COLORS.warning;
+    if (score >= 90) return colors.secondary;
+    if (score >= 80) return colors.primaryLight;
+    return colors.warning;
   };
 
   const getStatusLabel = (score) => {
@@ -97,7 +97,7 @@ export const PerformanceScreen = () => {
               <Text style={styles.metricLabel}>{STRINGS.taskCompletionText}</Text>
               <Text style={styles.metricVal}>{performance.completionRate}%</Text>
             </View>
-            <ProgressBar percentage={performance.completionRate} color={COLORS.secondary} />
+            <ProgressBar percentage={performance.completionRate} color={colors.secondary} />
           </View>
 
           <View style={styles.metricItem}>
@@ -105,7 +105,7 @@ export const PerformanceScreen = () => {
               <Text style={styles.metricLabel}>Clock-In Consistency</Text>
               <Text style={styles.metricVal}>94%</Text>
             </View>
-            <ProgressBar percentage={94} color={COLORS.primaryLight} />
+            <ProgressBar percentage={94} color={colors.primaryLight} />
           </View>
 
           <View style={styles.statusBox}>
@@ -159,7 +159,7 @@ export const PerformanceScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   scrollContent: {
     padding: 16,
@@ -175,27 +175,27 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     borderRadius: 8,
     paddingVertical: 10,
     alignItems: 'center',
     marginHorizontal: 4,
   },
   activeSelectorTab: {
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.primary,
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
   selectorTabText: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
   },
   activeSelectorTabText: {
-    color: COLORS.text,
+    color: colors.text,
   },
   selectorEmpId: {
     fontSize: 9,
-    color: COLORS.textDim,
+    color: colors.textDim,
     marginTop: 2,
   },
   scoreRow: {
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: COLORS.border,
+    borderBottomColor: colors.border,
     marginBottom: 16,
   },
   scoreBlock: {
@@ -212,11 +212,11 @@ const styles = StyleSheet.create({
   scoreNum: {
     fontSize: 32,
     fontWeight: '900',
-    color: COLORS.text,
+    color: colors.text,
   },
   scoreLabel: {
     fontSize: 11,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
     fontWeight: '600',
   },
@@ -230,13 +230,13 @@ const styles = StyleSheet.create({
   },
   metricLabel: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '600',
   },
   metricVal: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   statusBox: {
     flexDirection: 'row',
@@ -245,11 +245,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingTop: 14,
     borderTopWidth: 0.5,
-    borderTopColor: COLORS.border,
+    borderTopColor: colors.border,
   },
   statusTitle: {
     fontSize: 13,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '600',
   },
   statusTag: {
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
   },
   feedbackText: {
     fontSize: 13,
-    color: COLORS.text,
+    color: colors.text,
     lineHeight: 18,
     fontStyle: 'italic',
   },
@@ -289,16 +289,16 @@ const styles = StyleSheet.create({
     marginTop: 14,
     paddingTop: 10,
     borderTopWidth: 0.5,
-    borderTopColor: COLORS.border,
+    borderTopColor: colors.border,
   },
   reviewerText: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '700',
   },
   reviewerDate: {
     fontSize: 10,
-    color: COLORS.textDim,
+    color: colors.textDim,
   },
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
-import { COLORS } from '../Constants/colors';
+import { colors } from '../Helper/colors';
 
 export const Input = ({
   label,
@@ -21,7 +21,7 @@ export const Input = ({
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor={COLORS.textDim}
+        placeholderTextColor={colors.textDim}
         secureTextEntry={secureTextEntry}
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginBottom: 6,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -52,18 +52,18 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: 'rgba(255, 255, 255, 0.03)',
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 12,
-    color: COLORS.text,
+    color: colors.text,
     fontSize: 15,
   },
   inputError: {
-    borderColor: COLORS.danger,
+    borderColor: colors.danger,
   },
   errorText: {
-    color: COLORS.danger,
+    color: colors.danger,
     fontSize: 12,
     marginTop: 4,
     fontWeight: '500',

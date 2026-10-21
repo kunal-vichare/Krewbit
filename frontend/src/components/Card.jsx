@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { COLORS } from '../Constants/colors';
+import { colors } from '../Helper/colors';
 
 export const Card = ({
   children,
@@ -34,10 +34,10 @@ export const Card = ({
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: COLORS.cardBg,
+    backgroundColor: colors.cardBg,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     marginVertical: 8,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
     paddingTop: 14,
     paddingBottom: 8,
     borderBottomWidth: 0.5,
-    borderBottomColor: COLORS.border,
+    borderBottomColor: colors.border,
   },
   headerText: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
   },
@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
     borderTopWidth: 0.5,
-    borderTopColor: COLORS.border,
+    borderTopColor: colors.border,
   },
   footerText: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
   },
 });
 

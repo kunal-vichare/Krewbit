@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices/appSlice';
-import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
-import { Button } from '../../components/Button';
+import { Header } from '../../Components/Header';
+import { Card } from '../../Components/Card';
+import { Button } from '../../Components/Button';
 import { DrawerActions } from '@react-navigation/native';
-import { ProgressBar, ProgressRingPlaceholder } from '../../components/Chart';
+import { ProgressBar, ProgressRingPlaceholder } from '../../Components/Chart';
 
 export const DashboardScreen = () => {
   const navigation = useNavigation();
@@ -200,7 +200,7 @@ export const DashboardScreen = () => {
                 </Text>
                 
                 <Text style={styles.barLabel}>Task Completion Rate</Text>
-                <ProgressBar percentage={performance.completionRate} color={COLORS.secondary} />
+                <ProgressBar percentage={performance.completionRate} color={colors.secondary} />
               </View>
             </View>
           </Card>
@@ -210,11 +210,11 @@ export const DashboardScreen = () => {
         {isAdmin && (
           <Card header="Workspace Productivity Summary" style={styles.cardSpacing}>
             <Text style={styles.analyticsTitleText}>Company Target Completion Rate</Text>
-            <ProgressBar percentage={88} color={COLORS.secondary} />
+            <ProgressBar percentage={88} color={colors.secondary} />
             <Text style={styles.progressLabelText}>88% Completion rate this month</Text>
 
             <Text style={styles.analyticsTitleTextWithMargin}>Average Staff Working Hours</Text>
-            <ProgressBar percentage={92} color={COLORS.primaryLight} />
+            <ProgressBar percentage={92} color={colors.primaryLight} />
             <Text style={styles.progressLabelText}>92% efficiency rating registered</Text>
           </Card>
         )}
@@ -226,7 +226,7 @@ export const DashboardScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   scrollContent: {
     padding: 16,
@@ -240,17 +240,17 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 14,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '500',
   },
   userName: {
     fontSize: 24,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
   },
   userRole: {
     fontSize: 13,
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontWeight: '600',
     marginTop: 2,
   },
@@ -262,23 +262,23 @@ const styles = StyleSheet.create({
   badgeAdmin: {
     backgroundColor: 'rgba(139, 92, 246, 0.15)',
     borderWidth: 0.8,
-    borderColor: COLORS.accent,
+    borderColor: colors.accent,
   },
   badgeEmployee: {
     backgroundColor: 'rgba(79, 70, 229, 0.15)',
     borderWidth: 0.8,
-    borderColor: COLORS.primary,
+    borderColor: colors.primary,
   },
   badgeText: {
     fontSize: 11,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   companyInfoCard: {
     backgroundColor: 'rgba(255, 255, 255, 0.02)',
     borderRadius: 12,
     borderWidth: 0.8,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     paddingHorizontal: 14,
     paddingVertical: 10,
     flexDirection: 'row',
@@ -287,19 +287,19 @@ const styles = StyleSheet.create({
   },
   companyLabel: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginRight: 6,
     fontWeight: '600',
   },
   companyValue: {
     fontSize: 12,
-    color: COLORS.text,
+    color: colors.text,
     fontWeight: '700',
   },
   sectionTitle: {
     fontSize: 15,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -312,9 +312,9 @@ const styles = StyleSheet.create({
   },
   gridItem: {
     width: '48%',
-    backgroundColor: COLORS.cardBg,
+    backgroundColor: colors.cardBg,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     borderRadius: 12,
     padding: 16,
     alignItems: 'center',
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   gridText: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginLeft: 6,
   },
   cardSpacing: {
@@ -347,11 +347,11 @@ const styles = StyleSheet.create({
   attendanceStateText: {
     fontSize: 14,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
   },
   attendanceTimeSubText: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   clockBtn: {
@@ -372,33 +372,33 @@ const styles = StyleSheet.create({
   bigStatNum: {
     fontSize: 20,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     marginTop: 4,
   },
   statSubText: {
     fontSize: 11,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   holidayName: {
     fontSize: 16,
     fontWeight: '800',
-    color: COLORS.warning,
+    color: colors.warning,
     marginTop: 6,
   },
   holidayDate: {
     fontSize: 11,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 2,
   },
   announcementTitle: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   announcementExcerpt: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
     lineHeight: 16,
   },
@@ -408,7 +408,7 @@ const styles = StyleSheet.create({
   },
   viewAllText: {
     fontSize: 12,
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontWeight: '700',
   },
   analyticsRow: {
@@ -422,33 +422,33 @@ const styles = StyleSheet.create({
   analyticsTitleText: {
     fontSize: 13,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   analyticsTitleTextWithMargin: {
     fontSize: 13,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginTop: 14,
   },
   analyticsBodyText: {
     fontSize: 11,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
     lineHeight: 15,
     marginBottom: 8,
   },
   bold: {
-    color: COLORS.text,
+    color: colors.text,
     fontWeight: '700',
   },
   barLabel: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '600',
   },
   progressLabelText: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 2,
     textAlign: 'right',
   },

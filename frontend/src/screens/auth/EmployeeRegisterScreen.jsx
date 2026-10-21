@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { registerEmployee } from '../../redux/slices/authSlice';
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
+import { Input } from '../../Components/Input';
+import { Button } from '../../Components/Button';
 
 export const EmployeeRegisterScreen = () => {
   const navigation = useNavigation();
@@ -143,7 +143,7 @@ export const EmployeeRegisterScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   content: {
     padding: 24,
@@ -158,12 +158,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 13,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     textAlign: 'center',
     marginTop: 8,
     paddingHorizontal: 20,
@@ -182,12 +182,12 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   footerText: {
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontSize: 13,
     marginRight: 6,
   },
   loginLink: {
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontSize: 13,
     fontWeight: '700',
   },

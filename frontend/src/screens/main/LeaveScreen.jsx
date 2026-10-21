@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { applyLeave, updateLeaveStatus } from '../../redux/slices/appSlice';
-import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
+import { Header } from '../../Components/Header';
+import { Card } from '../../Components/Card';
+import { Input } from '../../Components/Input';
+import { Button } from '../../Components/Button';
 
 export const LeaveScreen = () => {
   const dispatch = useDispatch();
@@ -258,7 +258,7 @@ export const LeaveScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   scrollContent: {
     padding: 16,
@@ -278,11 +278,11 @@ const styles = StyleSheet.create({
   balanceNum: {
     fontSize: 22,
     fontWeight: '800',
-    color: COLORS.secondary,
+    color: colors.secondary,
   },
   balanceLabel: {
     fontSize: 9,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
     textAlign: 'center',
     fontWeight: '600',
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
   formLabel: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginBottom: 8,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.02)',
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     padding: 4,
     marginBottom: 16,
   },
@@ -314,15 +314,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   activeTypeTab: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: colors.primary,
   },
   typeTabText: {
     fontSize: 11,
     fontWeight: '600',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
   },
   activeTypeTabText: {
-    color: COLORS.text,
+    color: colors.text,
     fontWeight: '700',
   },
   submitBtn: {
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
   sectionHeader: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontSize: 13,
   },
   appItem: {
@@ -361,22 +361,22 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   appType: {
     fontSize: 10,
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontWeight: '600',
     marginTop: 2,
   },
   appDates: {
     fontSize: 12,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   appReason: {
     fontSize: 11,
-    color: COLORS.textDim,
+    color: colors.textDim,
     marginTop: 6,
     fontStyle: 'italic',
   },
@@ -392,22 +392,22 @@ const styles = StyleSheet.create({
   statusBadgeText: {
     fontSize: 10,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   statusPending: {
     backgroundColor: 'rgba(245, 158, 11, 0.15)',
     borderWidth: 0.5,
-    borderColor: COLORS.warning,
+    borderColor: colors.warning,
   },
   statusApproved: {
     backgroundColor: 'rgba(16, 185, 129, 0.15)',
     borderWidth: 0.5,
-    borderColor: COLORS.secondary,
+    borderColor: colors.secondary,
   },
   statusRejected: {
     backgroundColor: 'rgba(239, 68, 68, 0.15)',
     borderWidth: 0.5,
-    borderColor: COLORS.danger,
+    borderColor: colors.danger,
   },
   actionRow: {
     flexDirection: 'row',
@@ -422,19 +422,19 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   approveBtn: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: colors.secondary,
   },
   rejectBtn: {
-    backgroundColor: COLORS.danger,
+    backgroundColor: colors.danger,
   },
   actionBtnText: {
-    color: COLORS.text,
+    color: colors.text,
     fontSize: 14,
     fontWeight: '700',
   },
   separator: {
     height: 1,
-    backgroundColor: COLORS.border,
+    backgroundColor: colors.border,
   },
 });
 

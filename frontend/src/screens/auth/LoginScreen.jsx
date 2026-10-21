@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { login } from '../../redux/slices/authSlice';
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
+import { Input } from '../../Components/Input';
+import { Button } from '../../Components/Button';
 
 export const LoginScreen = () => {
   const navigation = useNavigation();
@@ -141,7 +141,7 @@ export const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   content: {
     padding: 24,
@@ -156,19 +156,19 @@ const styles = StyleSheet.create({
   appName: {
     fontSize: 32,
     fontWeight: '900',
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     letterSpacing: 1,
     marginBottom: 8,
   },
   title: {
     fontSize: 22,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 13,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     textAlign: 'center',
     marginTop: 6,
     paddingHorizontal: 20,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   roleLabel: {
     fontSize: 12,
     fontWeight: '700',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginBottom: 8,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 4,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
   },
   roleTab: {
     flex: 1,
@@ -200,15 +200,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   activeTab: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: colors.primary,
   },
   roleTabText: {
     fontSize: 13,
     fontWeight: '600',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
   },
   activeTabText: {
-    color: COLORS.text,
+    color: colors.text,
     fontWeight: '700',
   },
   form: {
@@ -224,12 +224,12 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   footerText: {
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontSize: 13,
     marginRight: 6,
   },
   registerLink: {
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontSize: 13,
     fontWeight: '700',
   },

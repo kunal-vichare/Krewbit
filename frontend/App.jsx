@@ -7,7 +7,7 @@ import { store } from './src/redux/store';
 
 //helpers
 import AppNavigation from './src/navigation/index';
-import { COLORS } from './src/Constants/colors';
+import { colors } from './src/Helper/colors';
 import {
   getMessaging,
   onMessage,
@@ -88,7 +88,7 @@ const App = () => {
   //render
   return (
     <Provider store={store}>
-      <StatusBar barStyle="light-content" backgroundColor={COLORS.background} />
+      <StatusBar barStyle="light-content" backgroundColor={colors.background} />
       <AppNavigation />
     </Provider>
   );

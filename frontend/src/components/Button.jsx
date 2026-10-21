@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
-import { COLORS } from '../Constants/colors';
+import { colors } from '../Helper/colors';
 
 export const Button = ({
   onPress,
@@ -47,7 +47,7 @@ export const Button = ({
       ]}
     >
       {loading ? (
-        <ActivityIndicator color={type === 'outline' ? COLORS.primary : COLORS.text} size="small" />
+        <ActivityIndicator color={type === 'outline' ? colors.primary : colors.text} size="small" />
       ) : (
         <Text style={[styles.textBase, getTextStyle(), textStyle]}>{title}</Text>
       )}
@@ -71,20 +71,20 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   primary: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: colors.primary,
   },
   secondary: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: colors.secondary,
   },
   outline: {
     backgroundColor: 'transparent',
     borderWidth: 1.5,
-    borderColor: COLORS.primary,
+    borderColor: colors.primary,
     elevation: 0,
     shadowOpacity: 0,
   },
   danger: {
-    backgroundColor: COLORS.danger,
+    backgroundColor: colors.danger,
   },
   disabled: {
     opacity: 0.5,
@@ -97,10 +97,10 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   textDefault: {
-    color: COLORS.text,
+    color: colors.text,
   },
   textOutline: {
-    color: COLORS.primary,
+    color: colors.primary,
   },
 });
 export default Button;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { COLORS } from '../Constants/colors';
+import { colors } from '../Helper/colors';
 
 // Bar Chart Component (Flexbox-based)
 export const BarChart = ({ data = [], maxValue = 10, height = 180 }) => {
@@ -36,7 +36,7 @@ export const BarChart = ({ data = [], maxValue = 10, height = 180 }) => {
 };
 
 // Progress Line Bar Component (horizontal gauge)
-export const ProgressBar = ({ percentage = 0, color = COLORS.primary, height = 8 }) => {
+export const ProgressBar = ({ percentage = 0, color = colors.primary, height = 8 }) => {
   const clampedValue = Math.min(Math.max(percentage, 0), 100);
   return (
     <View style={styles.progressBarWrapper}>
@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
     paddingRight: 8,
     paddingVertical: 12,
     borderRightWidth: 1,
-    borderRightColor: COLORS.border,
+    borderRightColor: colors.border,
   },
   yAxisText: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     textAlign: 'right',
   },
   chartPlotArea: {
@@ -111,18 +111,18 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   barFill: {
-    backgroundColor: COLORS.primaryLight,
+    backgroundColor: colors.primaryLight,
     borderRadius: 8,
     width: '100%',
   },
   barLabel: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
   },
   barValue: {
     fontSize: 9,
-    color: COLORS.text,
+    color: colors.text,
     fontWeight: 'bold',
     marginTop: 2,
   },
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     height: 110,
     borderRadius: 55,
     borderWidth: 8,
-    borderColor: COLORS.primary,
+    borderColor: colors.primary,
     borderStyle: 'solid',
     alignItems: 'center',
     justifyContent: 'center',
@@ -169,11 +169,11 @@ const styles = StyleSheet.create({
   ringScoreText: {
     fontSize: 22,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
   },
   ringLabelText: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 2,
     fontWeight: '600',
     textTransform: 'uppercase',

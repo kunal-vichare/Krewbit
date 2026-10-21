@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { COLORS } from '../Constants/colors';
+import { colors } from '../Constants/colors';
 
 const { width, height } = Dimensions.get('window');
 
@@ -7,11 +7,11 @@ export const globalStyles = StyleSheet.create({
   // Main Container layouts
   safeArea: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
     padding: 16,
   },
   scrollContainer: {
@@ -39,12 +39,12 @@ export const globalStyles = StyleSheet.create({
   
   // Cards & Containers
   card: {
-    backgroundColor: COLORS.cardBg,
+    backgroundColor: colors.cardBg,
     borderRadius: 16,
     padding: 18,
     marginVertical: 8,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
@@ -52,42 +52,42 @@ export const globalStyles = StyleSheet.create({
     elevation: 5,
   },
   cardGlass: {
-    backgroundColor: COLORS.cardBgGlass,
+    backgroundColor: colors.cardBgGlass,
     borderRadius: 16,
     padding: 16,
     marginVertical: 8,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
   },
   
   // Typography Styles
   title: {
     fontSize: 26,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     letterSpacing: 0.5,
   },
   subtitle: {
     fontSize: 14,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginTop: 4,
     lineHeight: 20,
   },
   sectionHeader: {
     fontSize: 18,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginVertical: 12,
     letterSpacing: 0.3,
   },
   bodyText: {
     fontSize: 14,
-    color: COLORS.text,
+    color: colors.text,
     lineHeight: 20,
   },
   bodyTextMuted: {
     fontSize: 13,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
   },
   boldText: {
     fontWeight: '700',
@@ -100,7 +100,7 @@ export const globalStyles = StyleSheet.create({
   inputLabel: {
     fontSize: 13,
     fontWeight: '600',
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     marginBottom: 6,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -108,18 +108,18 @@ export const globalStyles = StyleSheet.create({
   inputField: {
     backgroundColor: 'rgba(255,255,255,0.03)',
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: colors.border,
     borderRadius: 10,
     paddingHorizontal: 14,
     paddingVertical: 12,
-    color: COLORS.text,
+    color: colors.text,
     fontSize: 15,
   },
   inputFieldError: {
-    borderColor: COLORS.danger,
+    borderColor: colors.danger,
   },
   errorText: {
-    color: COLORS.danger,
+    color: colors.danger,
     fontSize: 12,
     marginTop: 4,
   },
@@ -134,26 +134,26 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 8,
   },
   btnPrimary: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: colors.primary,
   },
   btnSecondary: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: colors.secondary,
   },
   btnOutline: {
     backgroundColor: 'transparent',
     borderWidth: 1.5,
-    borderColor: COLORS.primary,
+    borderColor: colors.primary,
   },
   btnText: {
     fontSize: 16,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
   },
   btnTextPrimary: {
-    color: COLORS.text,
+    color: colors.text,
   },
   btnTextOutline: {
-    color: COLORS.primary,
+    color: colors.primary,
   },
   
   // Badges & Indicators
@@ -165,12 +165,12 @@ export const globalStyles = StyleSheet.create({
   },
   badgeAdmin: {
     backgroundColor: 'rgba(139, 92, 246, 0.2)',
-    borderColor: COLORS.accent,
+    borderColor: colors.accent,
     borderWidth: 0.5,
   },
   badgeEmployee: {
     backgroundColor: 'rgba(79, 70, 229, 0.2)',
-    borderColor: COLORS.primary,
+    borderColor: colors.primary,
     borderWidth: 0.5,
   },
   badgeText: {

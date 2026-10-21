@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../Constants/colors';
+import { colors } from '../Helper/colors';
 import { logout } from '../redux/slices/authSlice';
 
 export const Header = ({
@@ -70,9 +70,9 @@ export const Header = ({
 const styles = StyleSheet.create({
   header: {
     height: 60,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
     borderBottomWidth: 1,
-    borderBottomColor: COLORS.border,
+    borderBottomColor: colors.border,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -88,14 +88,14 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   leftIconText: {
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontSize: 26,
     fontWeight: 'bold',
   },
   title: {
     fontSize: 20,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     letterSpacing: 0.3,
     flexShrink: 1,
   },
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(239, 68, 68, 0.4)',
   },
   logoutText: {
-    color: COLORS.danger,
+    color: colors.danger,
     fontSize: 12,
     fontWeight: '700',
   },

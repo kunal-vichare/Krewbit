@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { COLORS } from '../../Constants/colors';
+import { colors } from '../../Helper/colors';
 import { STRINGS } from '../../Constants/strings';
 import { addAnnouncementThunk } from '../../redux/slices/appSlice';
-import { Header } from '../../components/Header';
-import { Card } from '../../components/Card';
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
+import { Header } from '../../Components/Header';
+import { Card } from '../../Components/Card';
+import { Input } from '../../Components/Input';
+import { Button } from '../../Components/Button';
 
 export const AnnouncementsScreen = () => {
   const dispatch = useDispatch();
@@ -123,7 +123,7 @@ export const AnnouncementsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
   scrollContent: {
     padding: 16,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   feedHeading: {
     fontSize: 14,
     fontWeight: '700',
-    color: COLORS.text,
+    color: colors.text,
     marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -161,29 +161,29 @@ const styles = StyleSheet.create({
   announceTitle: {
     fontSize: 15,
     fontWeight: '800',
-    color: COLORS.text,
+    color: colors.text,
     flex: 1,
     paddingRight: 8,
   },
   announceDate: {
     fontSize: 10,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontWeight: '600',
   },
   announceBody: {
     fontSize: 13,
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     lineHeight: 18,
     marginBottom: 12,
   },
   separator: {
     height: 0.5,
-    backgroundColor: COLORS.border,
+    backgroundColor: colors.border,
     marginBottom: 8,
   },
   announceAuthor: {
     fontSize: 11,
-    color: COLORS.primaryLight,
+    color: colors.primaryLight,
     fontWeight: '700',
   },
   emptyCard: {
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: COLORS.textMuted,
+    color: colors.textMuted,
     fontSize: 13,
   },
 });
