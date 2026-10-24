@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { registerEmployee } from '../../redux/slices/authSlice';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
@@ -31,29 +31,29 @@ export const EmployeeRegisterScreen = () => {
     let tempErrors = {};
 
     if (!fullName) {
-      tempErrors.fullName = STRINGS.requiredError;
+      tempErrors.fullName = strings.requiredError;
       valid = false;
     }
     if (!email) {
-      tempErrors.email = STRINGS.requiredError;
+      tempErrors.email = strings.requiredError;
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      tempErrors.email = STRINGS.invalidEmail;
+      tempErrors.email = strings.invalidEmail;
       valid = false;
     }
     if (!password) {
-      tempErrors.password = STRINGS.requiredError;
+      tempErrors.password = strings.requiredError;
       valid = false;
     } else if (password.length < 6) {
-      tempErrors.password = STRINGS.passwordLengthError;
+      tempErrors.password = strings.passwordLengthError;
       valid = false;
     }
     if (!companyId) {
-      tempErrors.companyId = STRINGS.requiredError;
+      tempErrors.companyId = strings.requiredError;
       valid = false;
     }
     if (!designation) {
-      tempErrors.designation = STRINGS.requiredError;
+      tempErrors.designation = strings.requiredError;
       valid = false;
     }
 
@@ -86,37 +86,37 @@ export const EmployeeRegisterScreen = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.header}>
-        <Text style={styles.title}>{STRINGS.registerAsEmployee}</Text>
+        <Text style={styles.title}>{strings.registerAsEmployee}</Text>
         <Text style={styles.subtitle}>Enter your details and Company ID to sync with your employer's workspace</Text>
       </View>
 
       <View style={styles.form}>
         <Input
-          label={STRINGS.fullNameLabel}
-          placeholder={STRINGS.fullNamePlaceholder}
+          label={strings.fullNameLabel}
+          placeholder={strings.fullNamePlaceholder}
           value={fullName}
           onChangeText={setFullName}
           error={errors.fullName}
         />
         <Input
-          label={STRINGS.emailLabel}
-          placeholder={STRINGS.emailPlaceholder}
+          label={strings.emailLabel}
+          placeholder={strings.emailPlaceholder}
           value={email}
           onChangeText={setEmail}
           error={errors.email}
           keyboardType="email-address"
         />
         <Input
-          label={STRINGS.passwordLabel}
-          placeholder={STRINGS.passwordPlaceholder}
+          label={strings.passwordLabel}
+          placeholder={strings.passwordPlaceholder}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
           error={errors.password}
         />
         <Input
-          label={STRINGS.companyIdLabel}
-          placeholder={STRINGS.companyIdPlaceholder}
+          label={strings.companyIdLabel}
+          placeholder={strings.companyIdPlaceholder}
           value={companyId}
           onChangeText={setCompanyId}
           error={errors.companyId}
@@ -131,13 +131,13 @@ export const EmployeeRegisterScreen = () => {
         />
 
         <Button
-          title={STRINGS.registerEmployeeBtn}
+          title={strings.registerEmployeeBtn}
           onPress={handleRegister}
           style={styles.submitBtn}
         />
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>{STRINGS.alreadyHaveAccount}</Text>
+          <Text style={styles.footerText}>{strings.alreadyHaveAccount}</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={styles.loginLink}>Sign In</Text>
           </TouchableOpacity>

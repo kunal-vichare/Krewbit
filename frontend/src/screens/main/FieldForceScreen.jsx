@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { logFieldCheckpointThunk } from '../../redux/slices/appSlice';
 import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
@@ -64,19 +64,19 @@ export const FieldForceScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={STRINGS.fieldForceTitle} showBack />
+      <Header title={strings.fieldForceTitle} showBack />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         
         {/* GPS Console (Employee Only) */}
         {!isAdmin && (
-          <Card header={STRINGS.gpsStatus} style={styles.consoleCard}>
+          <Card header={strings.gpsStatus} style={styles.consoleCard}>
             <View style={styles.statusBanner}>
               <View style={styles.dot} />
-              <Text style={styles.statusText}>{STRINGS.gpsConnected}</Text>
+              <Text style={styles.statusText}>{strings.gpsConnected}</Text>
             </View>
 
-            <Text style={styles.label}>{STRINGS.checkPointPlaceholder}</Text>
+            <Text style={styles.label}>{strings.checkPointPlaceholder}</Text>
             <View style={styles.siteGrid}>
               {SITES.map((site) => (
                 <TouchableOpacity
@@ -100,7 +100,7 @@ export const FieldForceScreen = () => {
             </View>
 
             <Button
-              title={STRINGS.logCheckpointBtn}
+              title={strings.logCheckpointBtn}
               type="secondary"
               onPress={handleLogCheckpoint}
               style={styles.submitBtn}

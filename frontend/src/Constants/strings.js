@@ -1,4 +1,4 @@
-export const STRINGS = {
+export const strings = {
   appName: 'WorkSphere',
   appSubtitle: 'Corporate & Government HR Portal',
 

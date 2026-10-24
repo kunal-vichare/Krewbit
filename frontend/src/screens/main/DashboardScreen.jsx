@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
-import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices/appSlice';
 import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
@@ -22,8 +21,10 @@ import {
   percentageCode,
   componentSizes,
 } from '../../Helper/sizes';
+import {useTheme} from '../../Hooks/useTheme'
 
 export const DashboardScreen = () => {
+  const {colors} = useTheme();
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
@@ -47,7 +48,7 @@ export const DashboardScreen = () => {
       dispatch(clockOut(userId))
         .unwrap()
         .then((payload) => {
-          Alert.alert('Checked Out', `${STRINGS.checkOutSuccess} ${payload.newLog.checkOut}. Duration: ${payload.newLog.duration}`);
+          Alert.alert('Checked Out', `${strings.checkOutSuccess} ${payload.newLog.checkOut}. Duration: ${payload.newLog.duration}`);
         })
         .catch((error) => {
           Alert.alert('Error', error);
@@ -56,7 +57,7 @@ export const DashboardScreen = () => {
       dispatch(clockIn(userId))
         .unwrap()
         .then((payload) => {
-          Alert.alert('Checked In', `${STRINGS.checkInSuccess} ${payload.checkInTime}`);
+          Alert.alert('Checked In', `${strings.checkInSuccess} ${payload.checkInTime}`);
         })
         .catch((error) => {
           Alert.alert('Error', error);
@@ -69,7 +70,7 @@ export const DashboardScreen = () => {
   return (
     <View style={styles.container}>
       <Header 
-        title={STRINGS.appName}
+        title={strings.appName}
         leftIcon="☰"
         onLeftPress={() => navigation.dispatch(DrawerActions.openDrawer())}
       />
@@ -78,20 +79,20 @@ export const DashboardScreen = () => {
         {/* Welcome Section */}
         <View style={styles.welcomeBanner}>
           <View>
-            <Text style={styles.welcomeText}>{STRINGS.welcomeBack}</Text>
+            <Text style={styles.welcomeText}>{strings.welcomeBack}</Text>
             <Text style={styles.userName}>{currentUser?.name}</Text>
             <Text style={styles.userRole}>{currentUser?.designation}</Text>
           </View>
           <View style={[styles.badge, isAdmin ? styles.badgeAdmin : styles.badgeEmployee]}>
             <Text style={styles.badgeText}>
-              {isAdmin ? STRINGS.adminBadge : STRINGS.employeeBadge}
+              {isAdmin ? strings.adminBadge : strings.employeeBadge}
             </Text>
           </View>
         </View>
 
         {/* Company Workspace Banner */}
         <View style={styles.companyInfoCard}>
-          <Text style={styles.companyLabel}>{STRINGS.companyCodeText}</Text>
+          <Text style={styles.companyLabel}>{strings.companyCodeText}</Text>
           <Text style={styles.companyValue}>{currentUser?.companyName} ({currentUser?.companyId})</Text>
         </View>
 
@@ -146,7 +147,7 @@ export const DashboardScreen = () => {
 
         {/* Attendance Widget */}
         {!isAdmin && (
-          <Card header={STRINGS.todayStatus} style={styles.cardSpacing}>
+          <Card header={strings.todayStatus} style={styles.cardSpacing}>
             <View style={styles.attendanceRow}>
               <View>
                 <Text style={styles.attendanceStateText}>
@@ -157,7 +158,7 @@ export const DashboardScreen = () => {
                 </Text>
               </View>
               <Button 
-                title={isClockedIn ? STRINGS.clockOutBtn : STRINGS.clockInBtn} 
+                title={isClockedIn ? strings.clockOutBtn : strings.clockInBtn} 
                 type={isClockedIn ? 'danger' : 'secondary'}
                 onPress={handleClockToggle}
                 style={styles.clockBtn}
@@ -174,20 +175,20 @@ export const DashboardScreen = () => {
               <Text style={styles.statSubText}>Enrolled Workers</Text>
             </Card>
           ) : (
-            <Card style={styles.halfCard} header={STRINGS.leavesRemaining}>
+            <Card style={styles.halfCard} header={strings.leavesRemaining}>
               <Text style={styles.bigStatNum}>{totalLeaveLeft}</Text>
               <Text style={styles.statSubText}>Total Available Days</Text>
             </Card>
           )}
 
-          <Card style={styles.halfCard} header={STRINGS.upcomingHoliday}>
+          <Card style={styles.halfCard} header={strings.upcomingHoliday}>
             <Text style={styles.holidayName}>Solstice</Text>
             <Text style={styles.holidayDate}>June 23rd</Text>
           </Card>
         </View>
 
         {/* Noticeboard preview */}
-        <Card header={STRINGS.announcementsFeed} style={styles.cardSpacing}>
+        <Card header={strings.announcementsFeed} style={styles.cardSpacing}>
           <Text style={styles.announcementTitle}>{latestAnnouncement.title}</Text>
           <Text style={styles.announcementExcerpt} numberOfLines={2}>
             {latestAnnouncement.content}
@@ -196,7 +197,7 @@ export const DashboardScreen = () => {
             style={styles.viewAllBtn} 
             onPress={() => navigation.navigate('Announcements')}
           >
-            <Text style={styles.viewAllText}>{STRINGS.viewAll} Announcements →</Text>
+            <Text style={styles.viewAllText}>{strings.viewAll} Announcements →</Text>
           </TouchableOpacity>
         </Card>
 

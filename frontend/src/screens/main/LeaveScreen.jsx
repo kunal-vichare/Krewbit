@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { applyLeave, updateLeaveStatus } from '../../redux/slices/appSlice';
 import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
@@ -47,7 +47,7 @@ export const LeaveScreen = () => {
     let tempErrors = {};
 
     if (!startDate) {
-      tempErrors.startDate = STRINGS.requiredError;
+      tempErrors.startDate = strings.requiredError;
       valid = false;
     } else if (!/^\d{4}-\d{2}-\d{2}$/.test(startDate)) {
       tempErrors.startDate = 'Use format YYYY-MM-DD';
@@ -55,7 +55,7 @@ export const LeaveScreen = () => {
     }
 
     if (!endDate) {
-      tempErrors.endDate = STRINGS.requiredError;
+      tempErrors.endDate = strings.requiredError;
       valid = false;
     } else if (!/^\d{4}-\d{2}-\d{2}$/.test(endDate)) {
       tempErrors.endDate = 'Use format YYYY-MM-DD';
@@ -63,7 +63,7 @@ export const LeaveScreen = () => {
     }
 
     if (!reason) {
-      tempErrors.reason = STRINGS.requiredError;
+      tempErrors.reason = strings.requiredError;
       valid = false;
     }
 
@@ -83,7 +83,7 @@ export const LeaveScreen = () => {
       }))
         .unwrap()
         .then(() => {
-          Alert.alert('Success', STRINGS.leaveAppliedSuccess);
+          Alert.alert('Success', strings.leaveAppliedSuccess);
           setStartDate('');
           setEndDate('');
           setReason('');
@@ -167,7 +167,7 @@ export const LeaveScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={STRINGS.leaveTitle} showBack />
+      <Header title={strings.leaveTitle} showBack />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         
@@ -176,23 +176,23 @@ export const LeaveScreen = () => {
           <View style={styles.balanceGrid}>
             <Card style={styles.balanceCard}>
               <Text style={styles.balanceNum}>{balances.casual}</Text>
-              <Text style={styles.balanceLabel}>{STRINGS.casualLeave}</Text>
+              <Text style={styles.balanceLabel}>{strings.casualLeave}</Text>
             </Card>
             <Card style={styles.balanceCard}>
               <Text style={styles.balanceNum}>{balances.sick}</Text>
-              <Text style={styles.balanceLabel}>{STRINGS.sickLeave}</Text>
+              <Text style={styles.balanceLabel}>{strings.sickLeave}</Text>
             </Card>
             <Card style={styles.balanceCard}>
               <Text style={styles.balanceNum}>{balances.earned}</Text>
-              <Text style={styles.balanceLabel}>{STRINGS.earnedLeave}</Text>
+              <Text style={styles.balanceLabel}>{strings.earnedLeave}</Text>
             </Card>
           </View>
         )}
 
         {/* Apply Leave Form (Employee Only) */}
         {!isAdmin && (
-          <Card header={STRINGS.applyLeaveTitle} style={styles.formCard}>
-            <Text style={styles.formLabel}>{STRINGS.leaveTypeLabel}</Text>
+          <Card header={strings.applyLeaveTitle} style={styles.formCard}>
+            <Text style={styles.formLabel}>{strings.leaveTypeLabel}</Text>
             <View style={styles.typeSelector}>
               {['casual', 'sick', 'earned'].map((type) => (
                 <TouchableOpacity
@@ -208,7 +208,7 @@ export const LeaveScreen = () => {
             </View>
 
             <Input
-              label={STRINGS.startDateLabel}
+              label={strings.startDateLabel}
               placeholder="YYYY-MM-DD"
               value={startDate}
               onChangeText={setStartDate}
@@ -216,7 +216,7 @@ export const LeaveScreen = () => {
             />
 
             <Input
-              label={STRINGS.endDateLabel}
+              label={strings.endDateLabel}
               placeholder="YYYY-MM-DD"
               value={endDate}
               onChangeText={setEndDate}
@@ -224,15 +224,15 @@ export const LeaveScreen = () => {
             />
 
             <Input
-              label={STRINGS.reasonLabel}
-              placeholder={STRINGS.reasonPlaceholder}
+              label={strings.reasonLabel}
+              placeholder={strings.reasonPlaceholder}
               value={reason}
               onChangeText={setReason}
               error={errors.reason}
             />
 
             <Button
-              title={STRINGS.submitLeaveBtn}
+              title={strings.submitLeaveBtn}
               type="secondary"
               onPress={handleApply}
               style={styles.submitBtn}
@@ -242,7 +242,7 @@ export const LeaveScreen = () => {
 
         {/* Applications List */}
         <Text style={styles.sectionHeader}>
-          {isAdmin ? 'Pending Approvals & History' : STRINGS.leaveHistoryTitle}
+          {isAdmin ? 'Pending Approvals & History' : strings.leaveHistoryTitle}
         </Text>
         <Card noPadding style={styles.listCard}>
           {userApplications.length === 0 ? (

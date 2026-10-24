@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { registerCompany } from '../../redux/slices/authSlice';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
@@ -30,25 +30,25 @@ export const CompanyRegisterScreen = () => {
     let tempErrors = {};
 
     if (!companyName) {
-      tempErrors.companyName = STRINGS.requiredError;
+      tempErrors.companyName = strings.requiredError;
       valid = false;
     }
     if (!ownerName) {
-      tempErrors.ownerName = STRINGS.requiredError;
+      tempErrors.ownerName = strings.requiredError;
       valid = false;
     }
     if (!email) {
-      tempErrors.email = STRINGS.requiredError;
+      tempErrors.email = strings.requiredError;
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      tempErrors.email = STRINGS.invalidEmail;
+      tempErrors.email = strings.invalidEmail;
       valid = false;
     }
     if (!password) {
-      tempErrors.password = STRINGS.requiredError;
+      tempErrors.password = strings.requiredError;
       valid = false;
     } else if (password.length < 6) {
-      tempErrors.password = STRINGS.passwordLengthError;
+      tempErrors.password = strings.passwordLengthError;
       valid = false;
     }
 
@@ -81,36 +81,36 @@ export const CompanyRegisterScreen = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.header}>
-        <Text style={styles.title}>{STRINGS.registerAsCompany}</Text>
+        <Text style={styles.title}>{strings.registerAsCompany}</Text>
         <Text style={styles.subtitle}>Register your organization to onboard your employees and monitor attendance</Text>
       </View>
 
       <View style={styles.form}>
         <Input
-          label={STRINGS.companyNameLabel}
-          placeholder={STRINGS.companyNamePlaceholder}
+          label={strings.companyNameLabel}
+          placeholder={strings.companyNamePlaceholder}
           value={companyName}
           onChangeText={setCompanyName}
           error={errors.companyName}
         />
         <Input
-          label={STRINGS.fullNameLabel}
-          placeholder={STRINGS.ownerFullName}
+          label={strings.fullNameLabel}
+          placeholder={strings.ownerFullName}
           value={ownerName}
           onChangeText={setOwnerName}
           error={errors.ownerName}
         />
         <Input
-          label={STRINGS.emailLabel}
-          placeholder={STRINGS.emailPlaceholder}
+          label={strings.emailLabel}
+          placeholder={strings.emailPlaceholder}
           value={email}
           onChangeText={setEmail}
           error={errors.email}
           keyboardType="email-address"
         />
         <Input
-          label={STRINGS.passwordLabel}
-          placeholder={STRINGS.passwordPlaceholder}
+          label={strings.passwordLabel}
+          placeholder={strings.passwordPlaceholder}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -118,13 +118,13 @@ export const CompanyRegisterScreen = () => {
         />
 
         <Button
-          title={STRINGS.registerCompanyBtn}
+          title={strings.registerCompanyBtn}
           onPress={handleRegister}
           style={styles.submitBtn}
         />
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>{STRINGS.alreadyHaveAccount}</Text>
+          <Text style={styles.footerText}>{strings.alreadyHaveAccount}</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={styles.loginLink}>Sign In</Text>
           </TouchableOpacity>

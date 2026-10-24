@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { addAnnouncementThunk } from '../../redux/slices/appSlice';
 import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
@@ -34,11 +34,11 @@ export const AnnouncementsScreen = () => {
     let tempErrors = {};
 
     if (!title) {
-      tempErrors.title = STRINGS.requiredError;
+      tempErrors.title = strings.requiredError;
       valid = false;
     }
     if (!content) {
-      tempErrors.content = STRINGS.requiredError;
+      tempErrors.content = strings.requiredError;
       valid = false;
     }
 
@@ -75,13 +75,13 @@ export const AnnouncementsScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={STRINGS.announcementsTitle} showBack />
+      <Header title={strings.announcementsTitle} showBack />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         
         {/* Post New Announcement (Admin Only) */}
         {isAdmin && (
-          <Card header={STRINGS.postAnnouncementTitle} style={styles.formCard}>
+          <Card header={strings.postAnnouncementTitle} style={styles.formCard}>
             <Input
               label="Announcement Title"
               placeholder="e.g. Annual Audit / Holiday"
@@ -100,7 +100,7 @@ export const AnnouncementsScreen = () => {
             />
 
             <Button
-              title={STRINGS.postBtn}
+              title={strings.postBtn}
               type="secondary"
               onPress={handleBroadcast}
               style={styles.broadcastBtn}
@@ -112,7 +112,7 @@ export const AnnouncementsScreen = () => {
         <Text style={styles.feedHeading}>Announcements Bulletin</Text>
         {announcements.length === 0 ? (
           <Card style={styles.emptyCard}>
-            <Text style={styles.emptyText}>{STRINGS.noAnnouncements}</Text>
+            <Text style={styles.emptyText}>{strings.noAnnouncements}</Text>
           </Card>
         ) : (
           <FlatList

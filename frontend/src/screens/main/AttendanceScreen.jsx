@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices/appSlice';
 import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
@@ -48,7 +48,7 @@ export const AttendanceScreen = () => {
       dispatch(clockOut(userId))
         .unwrap()
         .then((payload) => {
-          Alert.alert('Checked Out', `${STRINGS.checkOutSuccess} ${payload.newLog.checkOut}.`);
+          Alert.alert('Checked Out', `${strings.checkOutSuccess} ${payload.newLog.checkOut}.`);
         })
         .catch((error) => {
           Alert.alert('Error', error);
@@ -57,7 +57,7 @@ export const AttendanceScreen = () => {
       dispatch(clockIn(userId))
         .unwrap()
         .then((payload) => {
-          Alert.alert('Checked In', `${STRINGS.checkInSuccess} ${payload.checkInTime}`);
+          Alert.alert('Checked In', `${strings.checkInSuccess} ${payload.checkInTime}`);
         })
         .catch((error) => {
           Alert.alert('Error', error);
@@ -85,7 +85,7 @@ export const AttendanceScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={STRINGS.attendanceTitle} showBack />
+      <Header title={strings.attendanceTitle} showBack />
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {/* Clock console */}
@@ -93,7 +93,7 @@ export const AttendanceScreen = () => {
           <Card header="Shift Control Desk" style={styles.consoleCard}>
             <View style={styles.consoleContent}>
               <View style={styles.clockCircle}>
-                <Text style={styles.clockLabel}>{STRINGS.elapsedTime}</Text>
+                <Text style={styles.clockLabel}>{strings.elapsedTime}</Text>
                 <Text style={styles.clockTimer}>
                   {isClockedIn ? 'Active Shift' : '00:00:00'}
                 </Text>
@@ -103,7 +103,7 @@ export const AttendanceScreen = () => {
               </View>
               
               <Button
-                title={isClockedIn ? STRINGS.clockOutBtn : STRINGS.clockInBtn}
+                title={isClockedIn ? strings.clockOutBtn : strings.clockInBtn}
                 type={isClockedIn ? 'danger' : 'secondary'}
                 onPress={handleClockToggle}
                 style={styles.consoleBtn}
@@ -114,7 +114,7 @@ export const AttendanceScreen = () => {
 
         {/* Analytics chart (Employee only) */}
         {!isAdmin && (
-          <Card header={STRINGS.workingHoursTrend} style={styles.chartCard}>
+          <Card header={strings.workingHoursTrend} style={styles.chartCard}>
             <BarChart data={chartData} maxValue={spacing.medium} />
             <Text style={styles.chartDescription}>
               Displaying hours logged during standard shifts this week.
@@ -123,7 +123,7 @@ export const AttendanceScreen = () => {
         )}
 
         {/* History List */}
-        <Text style={styles.historyTitle}>{STRINGS.attendanceTitle} History</Text>
+        <Text style={styles.historyTitle}>{strings.attendanceTitle} History</Text>
         <Card noPadding style={styles.listCard}>
           {userLogs.length === 0 ? (
             <View style={styles.emptyList}>

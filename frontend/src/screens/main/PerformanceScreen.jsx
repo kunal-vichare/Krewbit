@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, ScrollView, Alert, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { selectEmployeePerformance } from '../../redux/slices/appSlice';
 import { Header } from '../../Components/Header';
 import { Card } from '../../Components/Card';
@@ -57,14 +57,14 @@ export const PerformanceScreen = () => {
   };
 
   const getStatusLabel = (score) => {
-    if (score >= 90) return STRINGS.highPerformer;
-    if (score >= 80) return STRINGS.satisfactory;
-    return STRINGS.needsImprovement;
+    if (score >= 90) return strings.highPerformer;
+    if (score >= 80) return strings.satisfactory;
+    return strings.needsImprovement;
   };
 
   return (
     <View style={styles.container}>
-      <Header title={STRINGS.performanceTitle} showBack />
+      <Header title={strings.performanceTitle} showBack />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
 
@@ -93,17 +93,17 @@ export const PerformanceScreen = () => {
           <View style={styles.scoreRow}>
             <View style={styles.scoreBlock}>
               <Text style={styles.scoreNum}>{performance.productivityScore}%</Text>
-              <Text style={styles.scoreLabel}>{STRINGS.performanceScore}</Text>
+              <Text style={styles.scoreLabel}>{strings.performanceScore}</Text>
             </View>
             <View style={styles.scoreBlock}>
               <Text style={styles.scoreNum}>{performance.avgHours}h</Text>
-              <Text style={styles.scoreLabel}>{STRINGS.averageHoursText}</Text>
+              <Text style={styles.scoreLabel}>{strings.averageHoursText}</Text>
             </View>
           </View>
 
           <View style={styles.metricItem}>
             <View style={styles.metricHeader}>
-              <Text style={styles.metricLabel}>{STRINGS.taskCompletionText}</Text>
+              <Text style={styles.metricLabel}>{strings.taskCompletionText}</Text>
               <Text style={styles.metricVal}>{performance.completionRate}%</Text>
             </View>
             <ProgressBar percentage={performance.completionRate} color={colors.secondary} />
@@ -147,7 +147,7 @@ export const PerformanceScreen = () => {
         )}
 
         {/* Feedback Display Card (Employee Only or Admin review summary) */}
-        <Card header={STRINGS.managerFeedbackTitle} style={styles.feedbackCard}>
+        <Card header={strings.managerFeedbackTitle} style={styles.feedbackCard}>
           <Text style={styles.feedbackText}>
             {isAdmin
               ? (submittedFeedback[selectedEmp?.id] || performance.feedback)

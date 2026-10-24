@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
-import { STRINGS } from '../../Constants/strings';
+import { strings } from '../../Constants/strings';
 import { login } from '../../redux/slices/authSlice';
 import { Input } from '../../Components/Input';
 import { Button } from '../../Components/Button';
@@ -29,8 +29,8 @@ export const LoginScreen = () => {
   const [errors, setErrors] = useState({});
 
   const roles = [
-    { key: 'employee', label: STRINGS.roleEmployee },
-    { key: 'admin', label: STRINGS.adminBadge },
+    { key: 'employee', label: strings.roleEmployee },
+    { key: 'admin', label: strings.adminBadge },
   ];
 
   const validate = () => {
@@ -38,18 +38,18 @@ export const LoginScreen = () => {
     let tempErrors = {};
 
     if (!email) {
-      tempErrors.email = STRINGS.requiredError;
+      tempErrors.email = strings.requiredError;
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      tempErrors.email = STRINGS.invalidEmail;
+      tempErrors.email = strings.invalidEmail;
       valid = false;
     }
 
     if (!password) {
-      tempErrors.password = STRINGS.requiredError;
+      tempErrors.password = strings.requiredError;
       valid = false;
     } else if (password.length < 6) {
-      tempErrors.password = STRINGS.passwordLengthError;
+      tempErrors.password = strings.passwordLengthError;
       valid = false;
     }
 
@@ -65,7 +65,7 @@ export const LoginScreen = () => {
           // Logged in! AppNavigation index will auto-redirect because state changes
         })
         .catch((error) => {
-          Alert.alert('Authentication Failed', error || STRINGS.authFailed);
+          Alert.alert('Authentication Failed', error || strings.authFailed);
         });
     }
   };
@@ -81,13 +81,13 @@ export const LoginScreen = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.header}>
-        <Text style={styles.appName}>{STRINGS.appName}</Text>
-        <Text style={styles.title}>{STRINGS.loginTitle}</Text>
-        <Text style={styles.subtitle}>{STRINGS.loginSubtitle}</Text>
+        <Text style={styles.appName}>{strings.appName}</Text>
+        <Text style={styles.title}>{strings.loginTitle}</Text>
+        <Text style={styles.subtitle}>{strings.loginSubtitle}</Text>
       </View>
 
       <View style={styles.roleContainer}>
-        <Text style={styles.roleLabel}>{STRINGS.selectRole}</Text>
+        <Text style={styles.roleLabel}>{strings.selectRole}</Text>
         <View style={styles.roleTabs}>
           {roles.map(({ key, label }) => (
             <TouchableOpacity
@@ -114,16 +114,16 @@ export const LoginScreen = () => {
 
       <View style={styles.form}>
         <Input
-          label={STRINGS.emailLabel}
-          placeholder={STRINGS.emailPlaceholder}
+          label={strings.emailLabel}
+          placeholder={strings.emailPlaceholder}
           value={email}
           onChangeText={setEmail}
           error={errors.email}
           keyboardType="email-address"
         />
         <Input
-          label={STRINGS.passwordLabel}
-          placeholder={STRINGS.passwordPlaceholder}
+          label={strings.passwordLabel}
+          placeholder={strings.passwordPlaceholder}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -131,16 +131,16 @@ export const LoginScreen = () => {
         />
         
         <Button
-          title={STRINGS.loginBtn}
+          title={strings.loginBtn}
           onPress={handleLogin}
           style={styles.loginBtn}
         />
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>{STRINGS.noAccountYet}</Text>
+          <Text style={styles.footerText}>{strings.noAccountYet}</Text>
           <TouchableOpacity onPress={navigateToRegister}>
             <Text style={styles.registerLink}>
-              {role === 'admin' ? STRINGS.registerCompanyBtn : STRINGS.registerEmployeeBtn}
+              {role === 'admin' ? strings.registerCompanyBtn : strings.registerEmployeeBtn}
             </Text>
           </TouchableOpacity>
         </View>
