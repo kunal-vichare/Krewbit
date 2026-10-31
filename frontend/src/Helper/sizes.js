@@ -469,3 +469,34 @@ export const ArrowSize = {
 
 export const BACK_BUTTON_WIDTH = horizontalScale(74);
 export const bottomNavBarHeight = Platform.OS === "ios" ? 70 : 64;
+
+export const appLockButton = iconSizes.M;
+
+export const fontStyle = (type = "regular", size = "textMedium") => {
+  const sizeMap = {
+    tiny: fontSize.tiny,
+    extraSmall: fontSize.extraSmall,
+    small: fontSize.small,
+    bodySmall: fontSize.bodySmall,
+    caption: fontSize.caption,
+    body: fontSize.body,
+    bodyMedium: fontSize.bodyMedium,
+    bodyLarge: fontSize.bodyLarge,
+    medium: fontSize.medium,
+    textSmall: fontSize.bodySmall,
+    textMedium: fontSize.body,
+    textLarge: fontSize.bodyLarge,
+  };
+
+  const weightMap = {
+    regular: "400",
+    medium: "500",
+    semiBold: "600",
+    bold: "700",
+  };
+
+  return {
+    fontSize: sizeMap[size] || fontSize.body,
+    fontWeight: weightMap[type] || "400",
+  };
+};

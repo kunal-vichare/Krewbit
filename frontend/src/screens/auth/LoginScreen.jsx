@@ -18,6 +18,7 @@ import {
   flexValue,
   percentageCode,
 } from '../../Helper/sizes';
+import CommonTextInput from '../../components/Common/commonTextInput';
 
 export const LoginScreen = () => {
   const navigation = useNavigation();
@@ -113,23 +114,33 @@ export const LoginScreen = () => {
       </View>
 
       <View style={styles.form}>
-        <Input
+        <CommonTextInput
           label={strings.emailLabel}
-          placeholder={strings.emailPlaceholder}
           value={email}
-          onChangeText={setEmail}
-          error={errors.email}
+          onTextChange={setEmail}
+          secureTextEntry={false}
+          autoComplete="username"
+          textContentType="username"
+          importantForAutofill="yes"
+          autoCapitalize="none"
+          autoCorrect={false}
           keyboardType="email-address"
+          maxLength={100}
+          editable={true}
         />
-        <Input
+        <CommonTextInput
           label={strings.passwordLabel}
-          placeholder={strings.passwordPlaceholder}
           value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          error={errors.password}
+          onTextChange={setPassword}
+          secureTextEntry={true}
+          autoComplete="password"
+          textContentType="password"
+          importantForAutofill="yes"
+          autoCapitalize="none"
+          autoCorrect={false}
+          maxLength={100}
+          editable={true}
         />
-        
         <Button
           title={strings.loginBtn}
           onPress={handleLogin}
@@ -140,7 +151,9 @@ export const LoginScreen = () => {
           <Text style={styles.footerText}>{strings.noAccountYet}</Text>
           <TouchableOpacity onPress={navigateToRegister}>
             <Text style={styles.registerLink}>
-              {role === 'admin' ? strings.registerCompanyBtn : strings.registerEmployeeBtn}
+              {role === 'admin'
+                ? strings.registerCompanyBtn
+                : strings.registerEmployeeBtn}
             </Text>
           </TouchableOpacity>
         </View>
@@ -224,6 +237,7 @@ const styles = StyleSheet.create({
   },
   form: {
     width: percentageCode.full,
+    gap: 20,
   },
   loginBtn: {
     marginTop: spacing.small,
