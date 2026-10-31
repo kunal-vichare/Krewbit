@@ -3,12 +3,12 @@ import { StyleSheet, View, Text, ScrollView, Alert, TouchableOpacity } from 'rea
 import { useSelector } from 'react-redux';
 import { colors } from '../../Helper/colors';
 import { strings } from '../../Constants/strings';
-import { selectEmployeePerformance } from '../../redux/slices/appSlice';
-import { Header } from '../../Components/Header';
-import { Card } from '../../Components/Card';
-import { Input } from '../../Components/Input';
-import { Button } from '../../Components/Button';
-import { ProgressBar } from '../../Components/Chart';
+import { selectEmployeePerformance } from '../../Redux/slices/appSlice';
+import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { ProgressBar } from '../../components/Chart';
 import {
   spacing,
   borderRadius,

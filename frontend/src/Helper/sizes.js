@@ -1,5 +1,5 @@
 import { Platform, StatusBar } from "react-native";
-import { horizontalScale } from "../Components/Common/ResponsiveDesign";
+import { horizontalScale } from "../components/Common/ResponsiveDesign";
 
 export const imageSize = {
   imgHeight: 200,

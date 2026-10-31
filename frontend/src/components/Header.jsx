@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../Helper/colors';
-import { logout } from '../redux/slices/authSlice';
+import { logout } from '../Redux/slices/authSlice';
 import {
   spacing,
   borderRadius,

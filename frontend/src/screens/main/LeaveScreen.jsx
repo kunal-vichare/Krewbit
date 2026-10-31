@@ -3,11 +3,11 @@ import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity }
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
 import { strings } from '../../Constants/strings';
-import { applyLeave, updateLeaveStatus } from '../../redux/slices/appSlice';
-import { Header } from '../../Components/Header';
-import { Card } from '../../Components/Card';
-import { Input } from '../../Components/Input';
-import { Button } from '../../Components/Button';
+import { applyLeave, updateLeaveStatus } from '../../Redux/slices/appSlice';
+import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 import {
   spacing,
   borderRadius,

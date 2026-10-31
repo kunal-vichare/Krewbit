@@ -4,9 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
 import { strings } from '../../Constants/strings';
-import { login } from '../../redux/slices/authSlice';
-import { Input } from '../../Components/Input';
-import { Button } from '../../Components/Button';
+import { login } from '../../Redux/slices/authSlice';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 import {
   spacing,
   borderRadius,

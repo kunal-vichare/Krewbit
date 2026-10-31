@@ -3,10 +3,10 @@ import { StyleSheet, View, Text, ScrollView, Alert, FlatList, TouchableOpacity }
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
 import { strings } from '../../Constants/strings';
-import { logFieldCheckpointThunk } from '../../redux/slices/appSlice';
-import { Header } from '../../Components/Header';
-import { Card } from '../../Components/Card';
-import { Button } from '../../Components/Button';
+import { logFieldCheckpointThunk } from '../../Redux/slices/appSlice';
+import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
+import { Button } from '../../components/Button';
 import {
   spacing,
   borderRadius,

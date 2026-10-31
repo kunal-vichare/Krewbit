@@ -3,7 +3,7 @@ import { StatusBar, PermissionsAndroid, Platform } from 'react-native';
 
 //redux
 import { Provider } from 'react-redux';
-import { store } from './src/redux/store';
+import { store } from './src/Redux/store';
 
 //helpers
 import AppNavigation from './src/navigation/index';

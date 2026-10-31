@@ -3,11 +3,11 @@ import { StyleSheet, View, Text, ScrollView, Alert, FlatList } from 'react-nativ
 import { useSelector, useDispatch } from 'react-redux';
 import { colors } from '../../Helper/colors';
 import { strings } from '../../Constants/strings';
-import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices/appSlice';
-import { Header } from '../../Components/Header';
-import { Card } from '../../Components/Card';
-import { Button } from '../../Components/Button';
-import { BarChart } from '../../Components/Chart';
+import { clockIn, clockOut, selectEmployeePerformance } from '../../Redux/slices/appSlice';
+import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
+import { Button } from '../../components/Button';
+import { BarChart } from '../../components/Chart';
 import {
   spacing,
   borderRadius,

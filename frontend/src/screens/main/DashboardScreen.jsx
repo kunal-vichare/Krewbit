@@ -3,12 +3,12 @@ import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Alert } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
 import { strings } from '../../Constants/strings';
-import { clockIn, clockOut, selectEmployeePerformance } from '../../redux/slices/appSlice';
-import { Header } from '../../Components/Header';
-import { Card } from '../../Components/Card';
-import { Button } from '../../Components/Button';
+import { clockIn, clockOut, selectEmployeePerformance } from '../../Redux/slices/appSlice';
+import { Header } from '../../components/Header';
+import { Card } from '../../components/Card';
+import { Button } from '../../components/Button';
 import { DrawerActions } from '@react-navigation/native';
-import { ProgressBar, ProgressRingPlaceholder } from '../../Components/Chart';
+import { ProgressBar, ProgressRingPlaceholder } from '../../components/Chart';
 import {
   spacing,
   borderRadius,
